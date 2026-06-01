@@ -21,7 +21,9 @@
 
 <style>
 	article > :global(section p),
+	article > :global(section h1),
 	article > :global(section video),
+	article > :global(section img),
 	article > :global(section div) {
 		max-width: var(--col-width);
 		margin: 2rem auto;

@@ -8,18 +8,22 @@
       "section": "story",
       "content": [
         {
+          "type": "h1",
+          "value": "Ethical NBA Championships, Ranked"
+        },
+        {
           "type": "text",
           "value": "This is a chart of every NBA champion since 2001, ranked by how ethical their title was."
         },
         {
-          "type": "Placeholder",
+          "type": "img",
           "value": {
-            "value": "swarm chart"
+            "src": "assets/swarm.png"
           }
         },
         {
           "type": "text",
-          "value": "On the left: the 2015 Warriors, the least ethical champion of the century by my measure&mdash;because they faced some opponents missing great players."
+          "value": "Way out on the left are the 2015 Warriors, the least ethical champion of the century by my measure&mdash;because they faced multiple opponents missing important players."
         },
         {
           "type": "text",
@@ -41,36 +45,40 @@
         },
         {
           "type": "text",
-          "value": "The NBA playoffs are often a war of attrition, and lately it’s getting worse. Here is a chart of playoff injuries over time."
+          "value": "The NBA playoffs are often a war of attrition, and lately it’s getting worse. Here is a chart of above-average (to be defined shortly) players who missed games over time."
         },
         {
-          "type": "Placeholder",
+          "type": "img",
           "value": {
-            "value": "injury count over time (missed games - all players? elite players?)"
+            "src": "assets/missing.png"
           }
         },
         {
           "type": "text",
-          "value": "We can all agree that injuries are ticking up. But let’s be real, missing a 40 year-old Karl Malone on a bum knee is not the same as prime Kevin Durant."
+          "value": "Most DNPs (did not play) are injury-related, and anyone who watches knows those have been on the rise. But let’s be real, missing a 40 year-old Karl Malone on his last legs is not the same as a prime Kevin Durant."
         },
         {
           "type": "text",
-          "value": "Plenty of all-in-one stats have been built to quantify a player’s impact. We’ll use DARKO. Without getting too in the weeds, it estimates how much a player helps their team win, measured in points added per 100 possessions versus a league-average player. Most importantly, DARKO is forward-looking and blends things like box-scores, play-by-play, and age to answer the question “how good is this player right now?” Or in our case, “how much impact is this team missing?” Roughly speaking, a score of 0 is average, +1 is a solid starter, +3 is a star, and +6 is MVP tier."
+          "value": "Plenty of all-in-one stats have been built to quantify a player’s impact. We’ll use DARKO. Without getting too in the weeds, it estimates how much a player helps their team win, measured in points added per 100 possessions versus a league-average player."
         },
         {
-          "type": "Placeholder",
+          "type": "text",
+          "value": "Most importantly, DARKO is a forward-looking metric that blends things like box-scores, play-by-play, and age to answer the question “how good is this player right now?” Or in our case, “how much impact is this team missing?” Roughly speaking, a score of 0 is average, +1 is a solid starter, +3 is a star, and +6 is MVP tier."
+        },
+        {
+          "type": "img",
           "value": {
-            "value": "show 2026 top X players"
+            "src": "assets/dpm2025.png"
           }
         },
         {
           "type": "text",
-          "value": "Now we can see how much impact is missing from each playoffs by year, using their end-of-regular season DARKO score (DPM)."
+          "value": "With DARKO, we can quantify the impact that is missing from each playoffs by year, using the end-of-regular season DARKO scores (DPM)."
         },
         {
-          "type": "Placeholder",
+          "type": "img",
           "value": {
-            "value": "injury count over time of DPM average"
+            "src": "assets/missingdpm.png"
           }
         },
         {

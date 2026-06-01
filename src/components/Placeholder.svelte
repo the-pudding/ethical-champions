@@ -8,7 +8,7 @@
 
 <style>
 	div {
-		width: 20rem;
+		width: 100%;
 		height: 20rem;
 		background: #eee;
 		display: flex;
