@@ -1,23 +1,169 @@
 {
-	"meta": { "title": "Title TK", "description": "Description tk." },
-	"body": [
-		{
-			"section": "intro",
-			"content": [
-				{ "type": "h4", "value": "An h4 element with no attributes" },
-				{
-					"type": "text",
-					"value": "Some random text here, followed by an img tag."
-				},
-				{
-					"type": "img",
-					"value": { "src": "../assets/demo/test.jpg", "alt": "A cat" }
-				},
-				{
-					"type": "Test",
-					"value": { "label": "I’m a custom component!", "value": "50" }
-				}
-			]
-		}
-	]
+  "meta": {
+    "title": "Ethical NBA Championships, Ranked",
+    "description": "Which teams had the easiest and hardest paths?"
+  },
+  "body": [
+    {
+      "section": "story",
+      "content": [
+        {
+          "type": "text",
+          "value": "This is a chart of every NBA champion since 2001, ranked by how ethical their title was."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "swarm chart"
+          }
+        },
+        {
+          "type": "text",
+          "value": "On the left: the 2015 Warriors, the least ethical champion of the century by my measure&mdash;because they faced some opponents missing great players."
+        },
+        {
+          "type": "text",
+          "value": "But some champs take a harder road. I believe there have only been five truly ethical NBA champions in the last 25 years."
+        },
+        {
+          "type": "text",
+          "value": "To make my case, let’s start back in 2001. A simpler time, when AI just meant Haley Joel Osment playing a robot learning to be a real boy."
+        },
+        {
+          "type": "video",
+          "value": {
+            "src": "assets/ai.mp4",
+            "preload": "true",
+            "autoplay": "true",
+            "loop": "true",
+            "muted": "true"
+          }
+        },
+        {
+          "type": "text",
+          "value": "The NBA playoffs are often a war of attrition, and lately it’s getting worse. Here is a chart of playoff injuries over time."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "injury count over time (missed games - all players? elite players?)"
+          }
+        },
+        {
+          "type": "text",
+          "value": "We can all agree that injuries are ticking up. But let’s be real, missing a 40 year-old Karl Malone on a bum knee is not the same as prime Kevin Durant."
+        },
+        {
+          "type": "text",
+          "value": "Plenty of all-in-one stats have been built to quantify a player’s impact. We’ll use DARKO. Without getting too in the weeds, it estimates how much a player helps their team win, measured in points added per 100 possessions versus a league-average player. Most importantly, DARKO is forward-looking and blends things like box-scores, play-by-play, and age to answer the question “how good is this player right now?” Or in our case, “how much impact is this team missing?” Roughly speaking, a score of 0 is average, +1 is a solid starter, +3 is a star, and +6 is MVP tier."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "show 2026 top X players"
+          }
+        },
+        {
+          "type": "text",
+          "value": "Now we can see how much impact is missing from each playoffs by year, using their end-of-regular season DARKO score (DPM)."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "injury count over time of DPM average"
+          }
+        },
+        {
+          "type": "text",
+          "value": "Charts are fine for general trends, but a pile of heads might put the volume and people in context. Each year, an NBA champ plays a bunch of games. Here is every game an opponent with a DPM of +1 or higher sat out."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "heads, sized by absence x dpm"
+          }
+        },
+        {
+          "type": "text",
+          "value": "Jrue Holiday, Mike Conley, Tony Allen, Anderson Varejao, Kevin Love, and Kyrie Irving all missed games in three of the four rounds. Our champs got to walk through the playoffs avoiding these players, making the path undeniably easier. I’m not saying easy, but no one can argue that a full-strength Cavs roster would put up more of a fight."
+        },
+        {
+          "type": "text",
+          "value": "For fun, here is every team’s pile of opponents since 2001."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "small multiples"
+          }
+        },
+        {
+          "type": "text",
+          "value": "If we reduce these piles into a single score, we can plot them cleanly and compare them."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "classic swarm with faint ghost heads around teams"
+          }
+        },
+        {
+          "type": "text",
+          "value": "This shows us the numerical advantage each champ got from missing opponents. But that’s only half of the equation. Because the champs might have had their own missing players. That makes things harder, and can balance things out."
+        },
+        {
+          "type": "text",
+          "value": "People harp on the 2025 (and beyond) Thunder for their questionable bucket-getting approaches. They might not get ethical buckets, but they did get an ethical championship."
+        },
+        {
+          "type": "text",
+          "value": "In 2025 the Thunder caught a couple breaks by dodging Ja Morant and Brandon Clarke on the Grizzlies."
+        },
+        {
+          "type": "text",
+          "value": "But the Thunder had their own setbacks, missing Kenrich Williams for nearly the whole run, Aaron Wiggins for a game, and Isaiah Joe for some pivotal Finals games. While not superstar level players, they were still important pieces. Subtract what they were missing from what their opponents were missing, and it yields an, analytically speaking, ethical championship."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "chart of tug of war, maybe animated"
+          }
+        },
+        {
+          "type": "text",
+          "value": "When we apply this to the remaining teams, we see the full, net-impact-of-missing-players picture."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "full swarm chart again"
+          }
+        },
+        {
+          "type": "text",
+          "value": "Of the five that are quantitatively ethical, three jump out that are worthy of the ethical crown."
+        },
+        {
+          "type": "text",
+          "value": "First, the technical champs, the 2012 Miami Heat. They crushed the competition despite missing their third musketeer, Chris Bosh, for two of the four rounds."
+        },
+        {
+          "type": "text",
+          "value": "But for me, the purest of the ethical champions had to be one of the teams that faced unblemished rosters, leaving no doubt in my mind that they outperformed the best competition. Between the 2004 Detroit Pistons and the 2006 Miami Heat, a slight nod towards the Heat for two reasons."
+        },
+        {
+          "type": "text",
+          "value": "First, the Pistons technically didn’t have to face Karl Malone for one game. His DPM was below the threshold and he wasn’t exactly a key guy, he wasn’t nothing."
+        },
+        {
+          "type": "text",
+          "value": "Second, the Heat missed a couple games in the first round without Alonzo Mourning. Also, they technically missed two games from below threshold, but still important players in James Posey and Udonis Haslem."
+        },
+        {
+          "type": "text",
+          "value": "Tk"
+        }
+      ]
+    }
+  ]
 }
