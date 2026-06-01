@@ -8,10 +8,6 @@
       "section": "story",
       "content": [
         {
-          "type": "h1",
-          "value": "Ethical NBA Championships, Ranked"
-        },
-        {
           "type": "text",
           "value": "This is a chart of every NBA champion since 2001, ranked by how ethical their title was."
         },
@@ -28,6 +24,10 @@
         {
           "type": "text",
           "value": "But some champs take a harder road. I believe there have only been five truly ethical NBA champions in the last 25 years."
+        },
+        {
+          "type": "h1",
+          "value": "Ethical NBA Championships, Ranked"
         },
         {
           "type": "text",
