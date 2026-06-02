@@ -19,19 +19,19 @@
         },
         {
           "type": "text",
-          "value": "Way out on the left are the 2015 Warriors, by far the least ethical champion of the century by my measure. They got lucky because they faced multiple opponents missing important players."
+          "value": "Way out on the left are the 2015 Warriors, by far the least ethical champion of the century by my measure. They got lucky, facing multiple opponents missing important players."
         },
         {
           "type": "text",
-          "value": "But some champs face a harder road. I believe there have only been five truly ethical NBA champions in the last 25 years&mdash;teams that don’t need an asterisk by their title."
-        },
-        {
-          "type": "h1",
-          "value": "Ethical NBA Championships, Ranked"
+          "value": "But some champs faced a harder road. I believe there have only been five truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
         },
         {
           "type": "text",
-          "value": "To make my case, let’s start back in 2001. A simpler time, when AI just meant Haley Joel Osment playing a robot learning to be a real boy."
+          "value": "Ethical NBA Championships, Ranked (big title)"
+        },
+        {
+          "type": "text",
+          "value": "To make the case, let’s start back in 2001. A simpler time, when AI just meant Haley Joel Osment playing a robot learning to be a real boy."
         },
         {
           "type": "video",
@@ -45,7 +45,7 @@
         },
         {
           "type": "text",
-          "value": "Back then, players weren’t often absent for the playoffs. But lately they’ve become a war of attrition. Here is a chart of how many games were missed by above-average players (to be defined shortly) each playoff year."
+          "value": "Back then, players weren’t often absent for the playoffs. Lately, though, the playoffs have become a war of attrition. Here is how many games above-average players (defined shortly) missed each year."
         },
         {
           "type": "img",
@@ -55,7 +55,7 @@
         },
         {
           "type": "text",
-          "value": "Most DNPs (did not play) for good players are injury-related. But let’s be real, missing a 40 year-old Karl Malone on his last legs is not the same as a prime Kevin Durant."
+          "value": "But let’s be real: a missing 40 year-old Karl Malone on his last legs is not the same as a prime Kevin Durant."
         },
         {
           "type": "text",
@@ -63,7 +63,11 @@
         },
         {
           "type": "text",
-          "value": "Most importantly, DARKO is a forward-looking metric that blends things like box-scores, play-by-play, and age to answer the question “how good is this player right now?” Or in our case, “how much impact is this team missing?” Roughly speaking, a score of 0 is average, +1 is a solid starter, +3 is a star, and +6 is MVP tier."
+          "value": "Most importantly, DARKO is a forward-looking metric that blends things like box-scores, play-by-play, and age to answer the question “how good is this player right now?” Or in our case, “how much impact is this team missing?”"
+        },
+        {
+          "type": "text",
+          "value": "Roughly speaking, +1 is a solid starter, +3 is a star, and +6 is MVP tier. 0 is a league-average player, replaceable."
         },
         {
           "type": "img",
@@ -73,7 +77,11 @@
         },
         {
           "type": "text",
-          "value": "With DARKO, we can quantify the impact that is missing from each playoffs by year, using the end-of-regular season DARKO scores (DPM)."
+          "value": "With DARKO, we can quantify the impact that is missing from each playoffs by year, using the end-of-regular season DARKO scores (DPM). Now we can go from counting missing games to measuring the missing impact in each one."
+        },
+        {
+          "type": "text",
+          "value": "Here is the average DPM missed per-game each year, counting every missing starter-level player (DPM +1 or higher)."
         },
         {
           "type": "img",
@@ -83,7 +91,7 @@
         },
         {
           "type": "text",
-          "value": "Charts are fine for general trends, but a pile of heads might put the volume and people in context. Each year, an NBA champ plays a bunch of games. Here is every game an opponent with a DPM of +1 or higher (starter level) sat out."
+          "value": "Now let’s focus on NBA champions’ opponents. Charts are fine for general trends, but a pile of heads might help put the volume, and the humans behind it, in context. Here is every game missed by the 2015 Warriors’ opponents."
         },
         {
           "type": "Placeholder",
@@ -93,7 +101,7 @@
         },
         {
           "type": "text",
-          "value": "Jrue Holiday, Mike Conley, Tony Allen, Anderson Varejao, Kevin Love, and Kyrie Irving all missed games in three of the four rounds. Our champs got to walk through the playoffs avoiding these players, making the path undeniably easier. I’m not saying easy, but no one can argue that a full-strength Cavs roster would put up more of a fight."
+          "value": "Jrue Holiday, Mike Conley, Tony Allen, Anderson Varejao, Kevin Love, and Kyrie Irving all missed games in three of the four rounds. Our champs got to walk through the playoffs avoiding these players, making the path undeniably easier. I’m not saying it was easy, but don’t tell me they didn’t get a little lucky not facing a full-strength Cavaliers roster."
         },
         {
           "type": "text",
