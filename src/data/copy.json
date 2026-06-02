@@ -19,11 +19,11 @@
         },
         {
           "type": "text",
-          "value": "Way out on the left are the 2015 Warriors, the least ethical champion of the century by my measure&mdash;because they faced multiple opponents missing important players."
+          "value": "Way out on the left are the 2015 Warriors, by far the least ethical champion of the century by my measure. They got lucky because they faced multiple opponents missing important players."
         },
         {
           "type": "text",
-          "value": "But some champs take a harder road. I believe there have only been five truly ethical NBA champions in the last 25 years."
+          "value": "But some champs face a harder road. I believe there have only been five truly ethical NBA champions in the last 25 years&mdash;teams that don’t need an asterisk by their title."
         },
         {
           "type": "h1",
@@ -45,7 +45,7 @@
         },
         {
           "type": "text",
-          "value": "The NBA playoffs are often a war of attrition, and lately it’s getting worse. Here is a chart of above-average (to be defined shortly) players who missed games over time."
+          "value": "Back then, players weren’t often absent for the playoffs. But lately they’ve become a war of attrition. Here is a chart of how many games were missed by above-average players (to be defined shortly) each playoff year."
         },
         {
           "type": "img",
@@ -55,7 +55,7 @@
         },
         {
           "type": "text",
-          "value": "Most DNPs (did not play) are injury-related, and anyone who watches knows those have been on the rise. But let’s be real, missing a 40 year-old Karl Malone on his last legs is not the same as a prime Kevin Durant."
+          "value": "Most DNPs (did not play) for good players are injury-related. But let’s be real, missing a 40 year-old Karl Malone on his last legs is not the same as a prime Kevin Durant."
         },
         {
           "type": "text",
@@ -83,7 +83,7 @@
         },
         {
           "type": "text",
-          "value": "Charts are fine for general trends, but a pile of heads might put the volume and people in context. Each year, an NBA champ plays a bunch of games. Here is every game an opponent with a DPM of +1 or higher sat out."
+          "value": "Charts are fine for general trends, but a pile of heads might put the volume and people in context. Each year, an NBA champ plays a bunch of games. Here is every game an opponent with a DPM of +1 or higher (starter level) sat out."
         },
         {
           "type": "Placeholder",
