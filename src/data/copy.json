@@ -81,7 +81,7 @@
         },
         {
           "type": "text",
-          "value": "Here is the average DPM missed per-game each year, counting every missing starter-level player (DPM +1 or higher)."
+          "value": "I’ve chosen to limit to players of at least +1 DPM, which on average is about 125 players per year. Here is the average DPM missed per-game each year, counting every missing starter-level player."
         },
         {
           "type": "img",
