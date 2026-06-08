@@ -184,6 +184,28 @@
           "value": {
             "value": "parade"
           }
+        },
+        {
+          "type": "text",
+          "value": "Appendix"
+        },
+        {
+          "type": "text",
+          "value": "Missed Games by Year"
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "interactive table"
+          }
+        },
+        {
+          "type": "text",
+          "value": "Data and Methods"
+        },
+        {
+          "type": "text",
+          "value": "Tk"
         }
       ]
     }
