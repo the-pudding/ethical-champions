@@ -206,6 +206,10 @@
         {
           "type": "text",
           "value": "Tk"
+        },
+        {
+          "type": "text",
+          "value": "Mention and link to v1 of this story and the differences and why etc"
         }
       ]
     }
