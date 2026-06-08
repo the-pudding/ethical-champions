@@ -161,23 +161,29 @@
         },
         {
           "type": "text",
-          "value": "First, the technical champs, the 2012 Miami Heat. They crushed the competition despite missing their third musketeer, Chris Bosh, for two of the four rounds."
+          "value": "The analytical winner is the 2012 Miami Heat. They crushed the competition despite missing their third musketeer, Chris Bosh, for two of the four rounds."
         },
         {
           "type": "text",
-          "value": "But for me, the purest of the ethical champions had to be one of the teams that faced unblemished rosters, leaving no doubt in my mind that they outperformed the best competition. Between the 2004 Detroit Pistons and the 2006 Miami Heat, a slight nod towards the Heat for two reasons."
+          "value": "But for me, the purest of the ethical champions has to be one of the teams that faced unblemished rosters, leaving no doubt that they outperformed full-strength competition. Between the 2004 Detroit Pistons and the 2006 Miami Heat, I give a slight nod towards the Heat for two reasons."
         },
         {
           "type": "text",
-          "value": "First, the Pistons technically didn’t have to face Karl Malone for one game. His DPM was below the threshold and he wasn’t exactly a key guy, he wasn’t nothing."
+          "value": "On the opponent side, The Pistons technically didn’t have to face Karl Malone for one game. His DPM was below the threshold and I doubt he would have changed the result, but still worthy of a mention."
         },
         {
           "type": "text",
-          "value": "Second, the Heat missed a couple games in the first round without Alonzo Mourning. Also, they technically missed two games from below threshold, but still important players in James Posey and Udonis Haslem."
+          "value": "For the champs, The Pistons were always at full strength, while the Heat played a couple games in the first round without Alonzo Mourning. Also, they technically missed two games from below threshold, but still important players in James Posey and Udonis Haslem."
         },
         {
           "type": "text",
-          "value": "Tk"
+          "value": "Let’s hear it for your champion of champions, the 2006 Miami Heat!"
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "parade"
+          }
         }
       ]
     }
