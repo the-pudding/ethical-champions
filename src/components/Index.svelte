@@ -3,12 +3,20 @@
 	import CMS from "$components/helpers/CMS.svelte";
 	import Footer from "$components/Footer.svelte";
 	import Placeholder from "$components/Placeholder.svelte";
+	import PileExample from "$components/Pile.Example.svelte";
+	import loadData from "$utils/loadData.js";
+	import chartData from "$runes/chartData.svelte.js";
 
 	const copy = getContext("copy");
+
 	const { body } = copy;
+
 	const components = {
-		Placeholder
+		Placeholder,
+		PileExample
 	};
+
+	$effect(loadData);
 </script>
 
 <article>

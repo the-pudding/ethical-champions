@@ -94,6 +94,12 @@
           "value": "Now let’s focus on NBA champions’ opponents. Charts are fine for general trends, but a pile of heads might help put the volume, and the humans behind it, in context. Here is every game missed by the 2015 Warriors’ opponents."
         },
         {
+          "type": "PileExample",
+          "value": {
+            "season": "2015"
+          }
+        },
+        {
           "type": "Placeholder",
           "value": {
             "value": "heads, sized by absence x dpm"
