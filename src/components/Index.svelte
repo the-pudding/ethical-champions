@@ -4,6 +4,7 @@
 	import Footer from "$components/Footer.svelte";
 	import Placeholder from "$components/Placeholder.svelte";
 	import PileExample from "$components/Pile.Example.svelte";
+	import PileAll from "$components/Pile.All.svelte";
 	import loadData from "$utils/loadData.js";
 	import chartData from "$runes/chartData.svelte.js";
 
@@ -13,7 +14,8 @@
 
 	const components = {
 		Placeholder,
-		PileExample
+		PileExample,
+		PileAll
 	};
 
 	$effect(loadData);

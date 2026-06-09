@@ -112,9 +112,10 @@
           "value": "For fun, here is every team’s pile of opponents since 2001."
         },
         {
-          "type": "Placeholder",
+          "type": "PileAll",
           "value": {
-            "value": "small multiples"
+            "seasonStart": "2001",
+            "seasonEnd": "2025"
           }
         },
         {
@@ -133,7 +134,7 @@
         },
         {
           "type": "text",
-          "value": "People harp on the 2025 (and beyond) Thunder for their questionable bucket-getting approaches. They might not get ethical buckets, but they did get an ethical championship."
+          "value": "People harp on the 2025 (and beyond) Thunder for their questionable bucket-getting <a href=https://sports.yahoo.com/nba/article/flop-or-not-does-shai-gilgeous-alexander-really-fall-more-than-his-peers-134022010.html target=_blank rel=noreferrer>approaches</a>. They might not get ethical buckets, but they did get an ethical championship."
         },
         {
           "type": "text",
