@@ -9,7 +9,7 @@
       "content": [
         {
           "type": "text",
-          "value": "I believe there have only been five truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
+          "value": "I believe there have only been six truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
         },
         {
           "type": "text",
@@ -70,13 +70,19 @@
           "value": "Most importantly, DARKO is a forward-looking metric that blends things like box-scores, play-by-play, and age to answer the question “how good is this player right now?” Or in our case, “how much impact is this team missing?”"
         },
         {
+          "type": "img",
+          "value": {
+            "src": "assets/dpm2025.png"
+          }
+        },
+        {
           "type": "text",
           "value": "Roughly speaking, +1 is a solid starter, +3 is a star, and +6 is MVP tier. 0 is a league-average player, replaceable."
         },
         {
           "type": "img",
           "value": {
-            "src": "assets/dpm2025.png"
+            "src": "assets/darko.png"
           }
         },
         {
@@ -95,7 +101,27 @@
         },
         {
           "type": "text",
-          "value": "Now let’s focus on NBA champions’ opponents. Charts are fine for general trends, but a pile of heads might help put the volume, and the humans behind it, in context. Here is every game missed by the 2015 Warriors’ opponents."
+          "value": "We need one more ingredient to make things feel right–the Haliburton effect if you will."
+        },
+        {
+          "type": "img",
+          "value": {
+            "src": "assets/haliburton.png"
+          }
+        },
+        {
+          "type": "text",
+          "value": "According to the data he played in game seven, so he doesn’t count as a DNP. But he got injured just seven minutes into the first quarter, and the void he left for the rest of the game was undeniable. So we’ll award some partial missing DPM values for these unusual circumstances*."
+        },
+        {
+          "type": "Placeholder",
+          "value": {
+            "value": "missing DPM by year with partial stacked on top"
+          }
+        },
+        {
+          "type": "text",
+          "value": "Now let’s focus on NBA champions’ opponents. Charts are fine for general trends, but a Game-of-Thrones-esque pile of heads might help put the volume&mdash;and the humanity&mdash;in context. Each head is a game missed by the 2015 Warriors’ opponents, approximately sized by their missing DPM value."
         },
         {
           "type": "PileExample",
@@ -109,13 +135,13 @@
         },
         {
           "type": "text",
-          "value": "For fun, here is every team’s pile of opponents since 2001."
+          "value": "For fun, here is every game missed by the opponents of each year’s champ, as a pile of heads."
         },
         {
           "type": "PileAll",
           "value": {
             "seasonStart": "2001",
-            "seasonEnd": "2025"
+            "seasonEnd": "2026"
           }
         },
         {
@@ -162,11 +188,15 @@
         },
         {
           "type": "text",
-          "value": "Of the five that are quantitatively ethical, three jump out that are worthy of the ethical crown."
+          "value": "Of the six that are quantitatively ethical, three jump out that are worthy of the ethical crown."
         },
         {
           "type": "text",
           "value": "The analytical winner is the 2012 Miami Heat. They crushed the competition despite missing their third musketeer, Chris Bosh, for two of the four rounds."
+        },
+        {
+          "type": "text",
+          "value": "TODO rewrite below with knicks"
         },
         {
           "type": "text",

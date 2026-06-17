@@ -1,6 +1,7 @@
 <script>
 	import Pile from "$components/Pile.svelte";
 	import { range } from "d3";
+	import chartData from "$runes/chartData.svelte.js";
 
 	let { seasonStart, seasonEnd } = $props();
 
@@ -10,14 +11,19 @@
 </script>
 
 <div class="c">
-	{#each seasons as season}
-		<div class="season">
-			<div class="pile">
-				<Pile {season} />
+	{#if chartData.seasons}
+		{#each seasons as season}
+			{@const winner = chartData.seasons.find(
+				(s) => s.season === +season
+			)?.winner}
+			<div class="season">
+				<div class="pile">
+					<Pile {season} />
+				</div>
+				<div class="label">{season} ({winner})</div>
 			</div>
-			<div class="label">{season} TK</div>
-		</div>
-	{/each}
+		{/each}
+	{/if}
 </div>
 
 <style>

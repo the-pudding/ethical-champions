@@ -10,7 +10,7 @@
 	let containerHeight = $state(0);
 
 	const MIN_SCALE = 0.02;
-	const MAX_SCALE = 0.16;
+	const MAX_SCALE = 0.1;
 
 	const data = $derived.by(() => {
 		if (chartData.heads && chartData.players && chartData.dnp) {
@@ -37,7 +37,7 @@
 		return (
 			max(
 				chartData.players.filter((p) => p.season === +season),
-				(p) => p.dpm
+				(p) => p.missingDpm
 			) ?? 1
 		);
 	});
@@ -170,7 +170,7 @@
 		Common._seed = 6;
 
 		const physBodies = currentData.map((d, i) => {
-			const headArea = sizeScale(d.dpm);
+			const headArea = sizeScale(d.missingDpm);
 			const centeredVerts = makeCenteredVertices(d.head, headArea);
 			const x = width * 0.5 + Common.random(-width * 0.05, width * 0.05);
 			const y = -i * Math.sqrt(headArea) * 1.5;
@@ -189,7 +189,7 @@
 						strokeStyle: "#fff",
 						lineWidth: 1,
 						sprite: {
-							texture: `/assets/heads-trimmed/${d.bbrID}.png`,
+							texture: `assets/heads-trimmed/${d.bbrID}.png`,
 							xScale: 1,
 							yScale: 1
 						}
