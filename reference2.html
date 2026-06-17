@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DNP Swarm</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inconsolata', monospace;
+      background: #ccc;
+      padding: 24px;
+    }
+
+		svg text {
+			font-family: 'Inconsolata', monospace;
+		}
+
+    /* .charts {
+      display: flex;
+      gap: 32px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    } */
+
+    .chart-wrap { background: #fff; margin-bottom: 8px; }
+
+		svg {
+			display: block;
+		}
+
+    svg text.node-label {
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .zero-line { stroke: #ccc; stroke-width: 1; stroke-dasharray: 4 4; }
+
+    .axis line, .axis path { stroke: #ccc; }
+    .axis text { fill: #666; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+<!-- <h2>DNP Net Advantage by Season</h2> -->
+
+<div class="charts">
+  <div class="chart-wrap" style="max-width: 1280px; aspect-ratio: 2.5 / 1;">
+    <svg id="svg-h"></svg>
+  </div>
+  <div class="chart-wrap" style="max-width: 400px; aspect-ratio: 1 / 2;">
+    <svg id="svg-v"></svg>
+  </div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+(async () => {
+  const data = await d3.csv("web-dnp-by-season.csv", d => ({
+    season: +d.season,
+    winner: d.winner,
+    netReg: +d.netReg / +d.winnerGameCount,
+    netLow: +d.netLow / +d.winnerGameCount
+  }));
+
+  // filter out rows with no winner (future season placeholder)
+  const rows = data.filter(d => d.winner);
+
+  const metric = "netLow";
+
+  // actual pixel heights of team logos (all 96px wide)
+  const IMG_HEIGHTS = {
+    bos: 80, cle: 91, dal: 73, den: 73, det: 70,
+    gsw: 73, lal: 53, mia: 81, mil: 83, okc: 56,
+    sas: 75, tor: 74, nyk: 68
+  };
+
+  function makeChart(svgId) {
+    const container = document.getElementById(svgId).parentElement;
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    const vert = h > w;
+    const r = Math.sqrt(Math.sqrt(w * h * 2));
+    const pad = 32;
+    const svg = d3.select(`#${svgId}`);
+    svg.attr("width", w).attr("height", h);
+    const innerW = w - pad * 2;
+    const innerH = h - pad * 2;
+    const scale = d3.scaleLinear();
+    const defs = svg.append("defs");
+    const g = svg.append("g").attr("transform", `translate(${pad},${pad})`);
+    const zeroLine = g.append("line").attr("class", "zero-line");
+    const axis = g.append("g").attr("class", "axis");
+    if (!vert) {
+      scale.range([0, innerW]);
+      zeroLine.attr("y1", 0).attr("y2", innerH);
+      axis.attr("transform", `translate(0,${innerH})`);
+    } else {
+      scale.range([innerH, 0]);
+      zeroLine.attr("x1", 0).attr("x2", innerW);
+    }
+    const nodes = g.append("g").attr("class", "nodes");
+
+    function draw(minVal, maxVal) {
+      const domainPad = r / (vert ? innerH : innerW) * (maxVal - minVal);
+      scale.domain([minVal - domainPad, maxVal + domainPad]);
+
+      const sim = d3.forceSimulation(rows.map(d => ({ ...d })))
+        .force(vert ? "y" : "x", (vert ? d3.forceY : d3.forceX)(d => scale(d[metric])).strength(1))
+        .force(vert ? "x" : "y", (vert ? d3.forceX : d3.forceY)(vert ? innerW / 2 : innerH / 2).strength(0.1))
+        .force("collide", d3.forceCollide(r + 3))
+        .stop();
+      for (let i = 0; i < 300; i++) sim.tick();
+      const simData = sim.nodes();
+
+      if (vert) {
+        zeroLine.attr("y1", scale(0)).attr("y2", scale(0));
+        axis.call(d3.axisLeft(scale).ticks(6).tickSize(4)
+          .tickFormat(d => d === 0 ? "0" : d3.format("+.1f")(d)));
+      } else {
+        zeroLine.attr("x1", scale(0)).attr("x2", scale(0));
+        axis.call(d3.axisBottom(scale).ticks(6).tickSize(4)
+          .tickFormat(d => d === 0 ? "0" : d3.format("+.1f")(d)));
+      }
+      axis.select(".domain").remove();
+
+      defs.selectAll("clipPath").data(simData, d => d.season).join(
+        enter => enter.append("clipPath")
+          .attr("id", d => `clip-${svgId}-${d.season}`)
+          .append("circle").attr("r", r),
+        upd => upd.select("circle").attr("r", r)
+      );
+
+      nodes.selectAll("g.node").data(simData, d => d.season).join(
+        enter => {
+          const ng = enter.append("g").attr("class", "node");
+          ng.append("image")
+            .attr("href", d => `teams/${d.winner.toLowerCase()}.png`)
+            .attr("clip-path", d => `url(#clip-${svgId}-${d.season})`);
+          ng.append("text").attr("class", "lbl-season")
+            .attr("text-anchor", "middle")
+            .attr("font-size", Math.max(12, Math.round(r / 2.5)) + "px")
+            .attr("fill", "#555");
+          // ng.append("text").attr("class", "lbl-team")
+          //   .attr("text-anchor", "middle")
+          //   .attr("dominant-baseline", "middle")
+          //   .attr("font-size", "7px")
+          //   .attr("fill", "transparent");
+          return ng;
+        },
+        upd => upd
+      ).each(function(d) {
+        d3.select(this).attr("transform", `translate(${d.x},${d.y})`);
+        d3.select(this).select("image")
+          .attr("x", -r).attr("y", -r)
+          .attr("width", r * 2).attr("height", r * 2);
+        d3.select(this).select("clipPath circle").attr("r", r);
+        const imgHgt = IMG_HEIGHTS[d.winner.toLowerCase()] ?? 96;
+        const edgeR = imgHgt * r / 96;
+        const aboveMid = vert ? d.y <= innerH / 2 : d.y <= innerH / 2;
+        d3.select(this).select(".lbl-season")
+          .attr("y", aboveMid ? -edgeR - 4 : edgeR + 4)
+          .attr("dominant-baseline", aboveMid ? "auto" : "hanging")
+          .text(`'${String(d.season).slice(2)}`);
+        d3.select(this).select(".lbl-team").text(d.winner);
+      });
+    }
+
+    return { draw };
+  }
+
+  const chartH = makeChart("svg-h");
+  const chartV = makeChart("svg-v");
+
+  function update() {
+    const vals = rows.map(d => d[metric]);
+    const [minVal, maxVal] = d3.extent(vals);
+    chartH.draw(minVal, maxVal);
+    chartV.draw(minVal, maxVal);
+  }
+
+  update();
+})();
+</script>
+</body>
+</html>

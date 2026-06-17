@@ -2,6 +2,11 @@
 	import { getContext } from "svelte";
 	import CMS from "$components/helpers/CMS.svelte";
 	import Footer from "$components/Footer.svelte";
+	import Img from "$components/Img.svelte";
+	import Video from "$components/Video.svelte";
+	import Swarm from "$components/Swarm.svelte";
+	import Bar from "$components/Bar.svelte";
+	import Table from "$components/Table.svelte";
 	import Placeholder from "$components/Placeholder.svelte";
 	import PileExample from "$components/Pile.Example.svelte";
 	import PileAll from "$components/Pile.All.svelte";
@@ -13,6 +18,11 @@
 	const { body } = copy;
 
 	const components = {
+		Img,
+		Video,
+		Swarm,
+		Bar,
+		Table,
 		Placeholder,
 		PileExample,
 		PileAll
@@ -30,11 +40,14 @@
 </svelte:boundary>
 
 <style>
-	article > :global(section p),
-	article > :global(section h1),
-	article > :global(section video),
-	article > :global(section img),
-	article > :global(section div) {
+	article > :global(section > p),
+	article > :global(section > h1),
+	article > :global(section > video),
+	article > :global(section > img),
+	article > :global(section > div),
+	article > :global(section > table),
+	article > :global(section > table),
+	article > :global(section > figure) {
 		max-width: var(--col-width);
 		margin: 2rem auto;
 	}

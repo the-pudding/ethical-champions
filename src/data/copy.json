@@ -9,21 +9,19 @@
       "content": [
         {
           "type": "text",
-          "value": "I believe there have only been six truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
+          "value": "I hereby proclaim there have only been six truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
         },
         {
           "type": "text",
-          "value": "This is a chart of every NBA champion since 2001, ranked by how ethical their title was."
+          "value": "This is a chart of every NBA champion since 2001, ranked by how ethical their title was. (Don’t worry about the numbers yet, we’ll get there)."
         },
         {
-          "type": "img",
-          "value": {
-            "src": "assets/swarm.png"
-          }
+          "type": "Swarm",
+          "value": {}
         },
         {
           "type": "text",
-          "value": "Way out on the left are the 2015 Warriors, by far the least ethical champion of the century by my measure. They got lucky, facing multiple opponents missing important players."
+          "value": "Standing on their own are the 2015 Warriors, by far the least ethical champion of the century by my measure. They got lucky, facing multiple opponents missing important players."
         },
         {
           "type": "text",
@@ -38,13 +36,10 @@
           "value": "To make the case, let’s start back in 2001. A simpler time, when AI just meant Haley Joel Osment playing a robot learning to be a real boy."
         },
         {
-          "type": "video",
+          "type": "Video",
           "value": {
             "src": "assets/ai.mp4",
-            "preload": "true",
-            "autoplay": "true",
-            "loop": "true",
-            "muted": "true"
+            "figcaption": "A scene from the movie <em>A.I. Artificial Intelligence</em>"
           }
         },
         {
@@ -52,9 +47,10 @@
           "value": "In those days, players had grit and barely missed games. Lately, though, the playoffs have become a war of attrition. Here is how many games above-average players (defined shortly) missed each playoff year."
         },
         {
-          "type": "img",
+          "type": "Bar",
           "value": {
-            "src": "assets/missing.png"
+            "metric": "dnpCountDpmGt0",
+            "title": "number of games missed each playoff year"
           }
         },
         {
@@ -70,19 +66,19 @@
           "value": "Most importantly, DARKO is a forward-looking metric that blends things like box-scores, play-by-play, and age to answer the question “how good is this player right now?” Or in our case, “how much impact is this team missing?”"
         },
         {
-          "type": "img",
-          "value": {
-            "src": "assets/dpm2025.png"
-          }
+          "type": "Table",
+          "value": {}
         },
         {
           "type": "text",
-          "value": "Roughly speaking, +1 is a solid starter, +3 is a star, and +6 is MVP tier. 0 is a league-average player, replaceable."
+          "value": "Roughly speaking, +6 is MVP tier, +3 is a star, and +1 is a solid starter. 0 is a league-average player, replaceable."
         },
         {
-          "type": "img",
+          "type": "Img",
           "value": {
-            "src": "assets/darko.png"
+            "src": "assets/darko.png",
+            "figcaption": "From left to right: Victor Wembanyama, Jalen Brunson, Marcus Smart.",
+            "alt": "Three cartoon-style basketball player illustrations with oversized photographic heads on small drawn bodies, standing in a row. Left: Victor Webanyama in a gray jersey with white shorts. Center: Jalen Brunson in a blue jersey with orange shorts. Right: Marcus Smart in a yellow jersey with purple shorts. Above their heads are their DARKO DPM scores (+6.4, +3.4, +1.0)"
           }
         },
         {
@@ -94,9 +90,10 @@
           "value": "I’ve chosen to limit to players of at least +1 DPM, which on average are the top ~125 players each year. Basically starter-level players. Here is the average DPM missed per-game each year."
         },
         {
-          "type": "img",
+          "type": "Bar",
           "value": {
-            "src": "assets/missingdpm.png"
+            "metric": "fieldDpmGte1PerGame",
+            "title": "missing DPM per game each playoff year"
           }
         },
         {
@@ -104,9 +101,11 @@
           "value": "We need one more ingredient to make things feel right–the Haliburton effect if you will."
         },
         {
-          "type": "img",
+          "type": "Img",
           "value": {
-            "src": "assets/haliburton.png"
+            "src": "assets/haliburton.png",
+            "figcaption": "The same look on my face when I <a href=https://pudding.cool/2025/10/walk/ target=_blank rel=noreferrer>ruptured my achilles</a> a few months earlier.",
+            "alt": "A cartoon-style illustration of Tyrese Haliburton with an oversized photographic head on small drawn body diving for a ball with a look of pain on his face."
           }
         },
         {

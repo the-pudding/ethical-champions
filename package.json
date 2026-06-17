@@ -28,6 +28,7 @@
 		"prettier-plugin-svelte": "^3.5.2",
 		"rollup": "^4.60.4",
 		"rollup-plugin-svg": "^2.0.0",
+		"roughjs": "^4.6.6",
 		"runed": "^0.37.1",
 		"style-dictionary": "^5.4.1",
 		"svelte": "^5.55.9",
