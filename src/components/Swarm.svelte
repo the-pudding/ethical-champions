@@ -204,7 +204,7 @@
 				select(this).attr("transform", `translate(${d.x},${d.y})`);
 				select(this)
 					.select("image")
-					.attr("href", `/assets/teams/${d.winner.toLowerCase()}.png`)
+					.attr("href", `assets/teams/${d.winner.toLowerCase()}.png`)
 					.attr("clip-path", `url(#clip-swarm-${vert ? "v" : "h"}-${d.season})`)
 					.attr("x", -r)
 					.attr("y", -r)

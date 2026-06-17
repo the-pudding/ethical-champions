@@ -206,7 +206,7 @@
 				body.render.sprite.xScale = (b.max.x - b.min.x) / img.naturalWidth;
 				body.render.sprite.yScale = (b.max.y - b.min.y) / img.naturalHeight;
 			};
-			img.src = `/assets/heads-trimmed/${d.bbrID}.png`;
+			img.src = `assets/heads-trimmed/${d.bbrID}.png`;
 
 			return body;
 		});
