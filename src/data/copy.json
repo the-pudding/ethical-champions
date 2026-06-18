@@ -281,7 +281,15 @@
         },
         {
           "type": "text",
-          "value": "Mention and link to v1 of this story and the differences and why etc"
+          "value": "Data from <a href=https://www.nbarapm.com/ target=blank rel=noreferrer>nbarapm.com</a> and <a href=http://basketball-reference.com/ target=_blank rel=noreferrer>basketball-reference.com.</a>"
+        },
+        {
+          "type": "text",
+          "value": "To qualify for “low minutes” and partial DPM scores, players had to average at least 20 minutes per game during the regular season, Low minutes was defined as less than a third of their regular season minutes per game. Their amount of DPM was multiplied by the proportion of minutes they missed to arrive at a missing DPM value. For example, if a player missed 75% of their normal minutes and had a DPM of 2.0, then their missing DPM would be 1.5, not 2.0."
+        },
+        {
+          "type": "text",
+          "value": "I have <a href=https://pudding.cool/2023/06/asterisks target=_blank rel=noreferrer>previously attempted</a> to quantify the asterisks associated with NBA championships. Tom Haberstroh recently published a <a href=https://www.tomthefinder.com/p/new-yorks-title-needs-an-asterisk target=_blank rel=noreferrer>similar thought experiment.</a>"
         }
       ]
     }

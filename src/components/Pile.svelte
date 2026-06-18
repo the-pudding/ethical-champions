@@ -11,7 +11,7 @@
 	let containerWidth = $state(0);
 	let containerHeight = $state(0);
 	let isVisible = $state(false);
-	let tooltip = $state({ visible: false, x: 0, y: 0, name: "" });
+	let tooltip = $state({ visible: false, x: 0, y: 0, name: "", team: "", dpm: 0 });
 
 	const MIN_SCALE = 0.02;
 	const MAX_SCALE = 0.1;
@@ -277,7 +277,7 @@
 			const found = Query.point(physBodies, { x: mx, y: my });
 			if (found.length > 0) {
 				const player = bodyMap.get(found[0].id);
-				tooltip = { visible: true, x: mx, y: my, name: player?.name ?? "" };
+				tooltip = { visible: true, x: mx, y: my, name: player?.name ?? "", team: player?.team ?? "", dpm: player?.dpm ?? 0 };
 			} else {
 				tooltip = { ...tooltip, visible: false };
 			}
@@ -304,13 +304,13 @@
 </script>
 
 <div class="pile-wrap">
-	<div class="c" bind:this={container}>
-		{#if tooltip.visible}
-			<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px">
-				{tooltip.name}
-			</div>
-		{/if}
-	</div>
+	<div class="c" bind:this={container}></div>
+	{#if tooltip.visible}
+		<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px">
+			<div class="tooltip-name">{tooltip.name}</div>
+			<div class="tooltip-sub">{tooltip.team} · {tooltip.dpm.toFixed(1)} DPM</div>
+		</div>
+	{/if}
 	<svg bind:this={svgEl} class="divider" aria-hidden="true"></svg>
 	{#if seasonInfo}
 		<div class="meta">
@@ -335,6 +335,7 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		position: relative;
 	}
 
 	.c {
@@ -356,6 +357,11 @@
 		padding: 0.2em 0.5em;
 		white-space: nowrap;
 		transform: translate(-50%, calc(-100% - 8px));
+	}
+
+	.tooltip-sub {
+		font-size: 0.85em;
+		opacity: 0.75;
 	}
 
 	@media (hover: none) {
