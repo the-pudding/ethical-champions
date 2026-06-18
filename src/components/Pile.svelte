@@ -11,7 +11,14 @@
 	let containerWidth = $state(0);
 	let containerHeight = $state(0);
 	let isVisible = $state(false);
-	let tooltip = $state({ visible: false, x: 0, y: 0, name: "", team: "", dpm: 0 });
+	let tooltip = $state({
+		visible: false,
+		x: 0,
+		y: 0,
+		name: "",
+		team: "",
+		dpm: 0
+	});
 
 	const MIN_SCALE = 0.02;
 	const MAX_SCALE = 0.1;
@@ -277,7 +284,14 @@
 			const found = Query.point(physBodies, { x: mx, y: my });
 			if (found.length > 0) {
 				const player = bodyMap.get(found[0].id);
-				tooltip = { visible: true, x: mx, y: my, name: player?.name ?? "", team: player?.team ?? "", dpm: player?.missingDpm ?? 0 };
+				tooltip = {
+					visible: true,
+					x: mx,
+					y: my,
+					name: player?.name ?? "",
+					team: player?.team ?? "",
+					dpm: player?.missingDpm ?? 0
+				};
 			} else {
 				tooltip = { ...tooltip, visible: false };
 			}
@@ -308,7 +322,9 @@
 	{#if tooltip.visible}
 		<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px">
 			<div class="tooltip-name">{tooltip.name}</div>
-			<div class="tooltip-sub">{tooltip.team} · {tooltip.dpm.toFixed(1)} DPM</div>
+			<div class="tooltip-sub">
+				{tooltip.team} · {tooltip.dpm.toFixed(1)} missing DPM
+			</div>
 		</div>
 	{/if}
 	<svg bind:this={svgEl} class="divider" aria-hidden="true"></svg>
