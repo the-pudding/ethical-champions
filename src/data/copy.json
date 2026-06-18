@@ -21,11 +21,18 @@
         },
         {
           "type": "text",
-          "value": "Standing on their own are the 2015 Warriors, by far the least ethical champion of the century by my measure. They got lucky, facing multiple opponents missing important players."
+          "value": "Standing on their own are the 2015 Warriors, by far the least ethical champion of the century by my measure."
+        },
+        {
+          "type": "Img",
+          "value": {
+            "src": "assets/easy.png",
+            "alt": "Three cartoon-style basketball player illustrations with oversized photographic heads on small drawn bodies, in a yellow convertible. They are heading towards a sign that says “easy road” and away from one that says “hard road.”"
+          }
         },
         {
           "type": "text",
-          "value": "But some champs faced a harder road."
+          "value": "They got lucky, facing multiple opponents missing important players. But not all roads to the championship are easy…"
         },
         {
           "type": "Hero",
@@ -60,6 +67,13 @@
           "value": "But let’s be real: a missing 40 year-old Karl Malone on his last legs is not the same as a prime Kevin Durant."
         },
         {
+          "type": "Img",
+          "value": {
+            "src": "assets/compare.png",
+            "alt": "Two cartoon-style basketball player illustrations with oversized photographic heads on small drawn bodies. Malone is icing his knee on a bench, Durant is in a superman pose with a cape."
+          }
+        },
+        {
           "type": "text",
           "value": "Plenty of all-in-one stats have been built to quantify a player’s impact. We’ll use <a href=https://www.darko.app/about target=_blank rel=noreferrer>DARKO</a>. Without getting too in the weeds, it estimates how much a player helps their team win, measured in points added per 100 possessions versus a league-average player."
         },
@@ -89,7 +103,7 @@
         },
         {
           "type": "text",
-          "value": "I’ve chosen to limit to players of at least +1 DPM, which on average are the top ~125 players each year. Basically starter-level players. Here is the average DPM missed per-game each year."
+          "value": "I’ve chosen to limit to players of at least +1 DPM, which on average are the top ~80 players each year. Key starter-level players. Here is the average DPM missed per-game each year."
         },
         {
           "type": "Bar",

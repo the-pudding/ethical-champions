@@ -20,7 +20,7 @@
 		max-width: none;
 		background: var(--color-fg);
 		color: var(--color-bg);
-		padding: 2rem 1rem;
+		padding: 4rem 1rem;
 		margin: 4rem auto;
 	}
 
@@ -34,29 +34,14 @@
 	.byline {
 		text-align: center;
 		font-size: var(--16px);
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		text-align: center;
 		width: 100%;
 		max-width: var(--col-width);
 		margin: 0 auto;
 		margin-top: 1rem;
 		padding: 0 1rem;
-	}
-
-	.byline span {
-		width: 50%;
-		padding: 0 1rem;
-	}
-
-	.byline span:first-of-type {
-		text-align: right;
-		border-right: 1px solid var(--color-border);
-	}
-
-	.byline span:last-of-type {
-		text-align: left;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 	}
 
 	a {

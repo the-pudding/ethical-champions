@@ -118,7 +118,7 @@
 				.attr("x", 0)
 				.attr("y", 0)
 				.attr("dominant-baseline", "hanging")
-				.text("harder path ↑");
+				.text("harder road ↑");
 			labelG
 				.append("text")
 				.attr("class", "lbl-mid")
@@ -133,7 +133,7 @@
 				.attr("text-anchor", "middle")
 				.attr("x", 0)
 				.attr("y", innerH)
-				.text("↓ easier path");
+				.text("↓ easier road");
 		} else {
 			labelG.attr("transform", `translate(${padLeft},${padTop + innerH + 44})`);
 			labelG
@@ -142,7 +142,7 @@
 				.attr("text-anchor", "start")
 				.attr("x", 0)
 				.attr("y", 0)
-				.text("← easier path");
+				.text("← easier road");
 			labelG
 				.append("text")
 				.attr("class", "lbl-mid")
@@ -156,7 +156,7 @@
 				.attr("text-anchor", "end")
 				.attr("x", innerW)
 				.attr("y", 0)
-				.text("harder path →");
+				.text("harder road →");
 		}
 
 		// force simulation
