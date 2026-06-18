@@ -52,4 +52,8 @@
 		max-width: var(--col-width);
 		margin: 2rem auto;
 	}
+
+	article > :global(section > p:first-of-type) {
+		font-size: var(--32px);
+	}
 </style>

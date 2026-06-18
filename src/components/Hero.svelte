@@ -25,9 +25,11 @@
 	}
 
 	h1 {
-		line-height: 1;
+		line-height: 1.2;
 		font-weight: 700;
-		font-family: var(--font-mono);
+		/* font-family: var(--font-mono); */
+		max-width: var(--col-width);
+		margin: 0 auto;
 		text-align: center;
 	}
 

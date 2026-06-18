@@ -37,7 +37,7 @@
         {
           "type": "Hero",
           "value": {
-            "title": "Ethical NBA Championships, Ranked"
+            "title": "An Opinionated Guide to Ranking Ethical NBA Championships in the 21st Century"
           }
         },
         {
@@ -48,7 +48,7 @@
           "type": "Video",
           "value": {
             "src": "assets/ai.mp4",
-            "figcaption": "A scene from the movie <em>A.I. Artificial Intelligence</em>"
+            "figcaption": "A scene from the movie <em>A.I. Artificial Intelligence.</em>"
           }
         },
         {
@@ -120,8 +120,8 @@
           "type": "Img",
           "value": {
             "src": "assets/haliburton.png",
-            "figcaption": "My face too when I <a href=https://pudding.cool/2025/10/walk/ target=_blank rel=noreferrer>ruptured my Achilles</a> a few months before it was trendy..",
-            "alt": "A cartoon-style illustration of Tyrese Haliburton with an oversized photographic head on small drawn body diving for a ball with a look of pain on his face."
+            "figcaption": "I had the same look on my face when I <a href=https://pudding.cool/2025/10/walk/ target=_blank rel=noreferrer>ruptured my Achilles</a> a few months before it was trendy in the playoffs.",
+            "alt": "A cartoon-style illustration of Tyrese Haliburton with an oversized photographic head on a small drawn body diving for a ball with a look of pain on his face."
           }
         },
         {
