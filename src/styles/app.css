@@ -20,7 +20,7 @@
 
 	/* presets (used in reset.css) */
 	--font-body: var(--font-sans);
-	--font-form: var(--font-sans);
+	--font-form: var(--font-mono);
 
 	--radius-xs: 0.125rem;
 	--radius-sm: 0.25rem;
@@ -66,10 +66,12 @@
 
 h1 {
 	font-size: var(--48px, 48px);
+	font-weight: bold;
 }
 
 h2 {
 	font-size: var(--36px, 36px);
+	font-weight: bold;
 }
 
 h3 {

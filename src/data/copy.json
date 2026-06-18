@@ -230,14 +230,14 @@
         {
           "type": "img",
           "value": {
-            "src": "assets/teams-big/mia.png",
-            "alt": "Heat logo",
+            "src": "assets/teams-big/sas.png",
+            "alt": "Spurs logo",
             "class": "logo-big"
           }
         },
         {
           "type": "text",
-          "value": "The analytical winner is the 2006 Miami Heat. The Heat played a couple games in the first round without Alonzo Mourning. Also, they technically missed two games from below threshold, but still important players in James Posey and Udonis Haslem."
+          "value": "The 2005 Spurs did avoid a few big names (Rashard Lewis, Ray Allen, Joe Johnson), but their starting center, Rasho Nesterović was basically absent the entire playoffs. Third place."
         },
         {
           "type": "img",
@@ -249,7 +249,15 @@
         },
         {
           "type": "text",
-          "value": "TODO rewrite below with knicks"
+          "value": "Hot-off-the-press champions, the 2026 Knicks, had a historically ethical run. They almost had a near-perfect healthy opposition, missing a single game from Joel Embiid. On the flip side, they played two games without OG Anunoby, and one without Mitchell Robinson. Second place."
+        },
+        {
+          "type": "img",
+          "value": {
+            "src": "assets/teams-big/mia.png",
+            "alt": "Heat logo",
+            "class": "logo-big"
+          }
         },
         {
           "type": "text",
@@ -257,35 +265,19 @@
         },
         {
           "type": "text",
-          "value": "Let’s hear it for your champion of champions, the 2006 Miami Heat!"
+          "value": "The analytical winner is the 2006 Miami Heat. The Heat played a couple games in the first round without Alonzo Mourning. There was no single full DNP game from opponents, and just a single low-minute game from Tyson Chandler on the Bulls in the first round. The smallest of asterisks."
         },
         {
-          "type": "Placeholder",
-          "value": {
-            "value": "parade"
-          }
-        },
-        {
-          "type": "text",
+          "type": "h2",
           "value": "Appendix"
         },
         {
-          "type": "text",
-          "value": "Missed Games by Year"
+          "type": "Lookup",
+          "value": {}
         },
         {
-          "type": "Placeholder",
-          "value": {
-            "value": "interactive table"
-          }
-        },
-        {
-          "type": "text",
+          "type": "h2",
           "value": "Data and Methods"
-        },
-        {
-          "type": "text",
-          "value": "Tk"
         },
         {
           "type": "text",

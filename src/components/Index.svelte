@@ -12,6 +12,7 @@
 	import Placeholder from "$components/Placeholder.svelte";
 	import PileExample from "$components/Pile.Example.svelte";
 	import PileAll from "$components/Pile.All.svelte";
+	import Lookup from "$components/Lookup.svelte";
 	import loadData from "$utils/loadData.js";
 	import chartData from "$runes/chartData.svelte.js";
 
@@ -29,7 +30,8 @@
 		Table,
 		Placeholder,
 		PileExample,
-		PileAll
+		PileAll,
+		Lookup
 	};
 
 	$effect(loadData);
@@ -50,7 +52,8 @@
 	article > :global(section > div),
 	article > :global(section > table),
 	article > :global(section > table),
-	article > :global(section > figure) {
+	article > :global(section > figure),
+	article > :global(section > h2) {
 		max-width: var(--col-width);
 		margin: 2rem auto;
 	}
