@@ -94,7 +94,6 @@
 			stroke: "var(--color-fg)",
 			strokeWidth: 2,
 			roughness: 1.5,
-			seed: 7,
 			disableMultiStroke: true
 		});
 		svgEl.appendChild(node);
