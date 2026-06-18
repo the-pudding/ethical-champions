@@ -11,6 +11,7 @@
 	let containerWidth = $state(0);
 	let containerHeight = $state(0);
 	let isVisible = $state(false);
+	let tooltip = $state({ visible: false, x: 0, y: 0, name: "" });
 
 	const MIN_SCALE = 0.02;
 	const MAX_SCALE = 0.1;
@@ -41,6 +42,11 @@
 	});
 
 	const missedCount = $derived(data.length);
+	const avgMissingDpm = $derived(
+		seasonInfo && seasonInfo.winnerGameCount > 0
+			? sum(data, (d) => d.missingDpm) / seasonInfo.winnerGameCount
+			: 0
+	);
 
 	const maxSeasonDpm = $derived.by(() => {
 		if (!chartData.players) return 1;
@@ -143,7 +149,8 @@
 		const visible = isVisible;
 		if (!width || !height || currentData.length === 0 || !visible) return;
 
-		const { Engine, Render, Runner, Bodies, Body, Composite, Common } = Matter;
+		const { Engine, Render, Runner, Bodies, Body, Composite, Common, Query } =
+			Matter;
 
 		const sizeScale = scaleSqrt()
 			.domain([0, maxSeasonDpm])
@@ -259,7 +266,33 @@
 		Render.run(render);
 		const runner = Runner.run(Runner.create(), engine);
 
+		const bodyMap = new Map(
+			physBodies.map((body, i) => [body.id, currentData[i]])
+		);
+
+		const handleMouseMove = (e) => {
+			const rect = render.canvas.getBoundingClientRect();
+			const mx = e.clientX - rect.left;
+			const my = e.clientY - rect.top;
+			const found = Query.point(physBodies, { x: mx, y: my });
+			if (found.length > 0) {
+				const player = bodyMap.get(found[0].id);
+				tooltip = { visible: true, x: mx, y: my, name: player?.name ?? "" };
+			} else {
+				tooltip = { ...tooltip, visible: false };
+			}
+		};
+
+		const handleMouseLeave = () => {
+			tooltip = { ...tooltip, visible: false };
+		};
+
+		render.canvas.addEventListener("mousemove", handleMouseMove);
+		render.canvas.addEventListener("mouseleave", handleMouseLeave);
+
 		return () => {
+			render.canvas.removeEventListener("mousemove", handleMouseMove);
+			render.canvas.removeEventListener("mouseleave", handleMouseLeave);
 			Runner.stop(runner);
 			Render.stop(render);
 			render.canvas.remove();
@@ -271,13 +304,22 @@
 </script>
 
 <div class="pile-wrap">
-	<div class="c" bind:this={container}></div>
+	<div class="c" bind:this={container}>
+		{#if tooltip.visible}
+			<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px">
+				{tooltip.name}
+			</div>
+		{/if}
+	</div>
 	<svg bind:this={svgEl} class="divider" aria-hidden="true"></svg>
 	{#if seasonInfo}
 		<div class="meta">
 			<div class="meta-left">
 				<div class="meta-title">{season} | {seasonInfo.winner}</div>
 				<div class="meta-sub">{missedCount} missed games by opponents</div>
+				<div class="meta-sub">
+					{avgMissingDpm.toFixed(1)} missing DPM per game
+				</div>
 			</div>
 			<img
 				class="team-logo"
@@ -303,6 +345,25 @@
 		margin: 0;
 	}
 
+	.tooltip {
+		position: absolute;
+		pointer-events: none;
+		z-index: 10;
+		background: var(--color-fg);
+		color: var(--color-bg, #fff);
+		font-family: var(--font-mono);
+		font-size: var(--12px);
+		padding: 0.2em 0.5em;
+		white-space: nowrap;
+		transform: translate(-50%, calc(-100% - 8px));
+	}
+
+	@media (hover: none) {
+		.tooltip {
+			display: none;
+		}
+	}
+
 	.c::after {
 		content: "";
 		position: absolute;
@@ -325,7 +386,7 @@
 
 	.meta {
 		display: flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: space-between;
 		gap: 0.5rem;
 	}
@@ -346,10 +407,11 @@
 		font-family: var(--font-mono);
 		font-size: var(--12px);
 		color: var(--color-fg-light);
+		line-height: 1.2;
 	}
 
 	.team-logo {
-		height: 3rem;
+		height: 3.5rem;
 		width: auto;
 		flex-shrink: 0;
 	}
