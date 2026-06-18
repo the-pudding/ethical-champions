@@ -160,6 +160,14 @@
           "value": "This shows us the numerical advantage each champ got from missing opponents. But that’s only half of the equation. Because the champs might have had their own missing players. That makes things harder, and can balance things out."
         },
         {
+          "type": "img",
+          "value": {
+            "src": "assets/teams-big/okc.png",
+            "alt": "Thunder logo",
+            "class": "logo-big"
+          }
+        },
+        {
           "type": "text",
           "value": "People harp on the 2025 (and beyond) Thunder for their questionable bucket-getting <a href=https://sports.yahoo.com/nba/article/flop-or-not-does-shai-gilgeous-alexander-really-fall-more-than-his-peers-134022010.html target=_blank rel=noreferrer>approaches</a>. They might not get ethical buckets, but they did get an ethical championship."
         },
@@ -182,18 +190,32 @@
           "value": "When we apply this to the remaining teams, we see the full, net-impact-of-missing-players picture."
         },
         {
-          "type": "Placeholder",
-          "value": {
-            "value": "full swarm chart again"
-          }
+          "type": "Swarm",
+          "value": {}
         },
         {
           "type": "text",
           "value": "Of the six that are quantitatively ethical, three jump out that are worthy of the ethical crown."
         },
         {
+          "type": "img",
+          "value": {
+            "src": "assets/teams-big/mia.png",
+            "alt": "Heat logo",
+            "class": "logo-big"
+          }
+        },
+        {
           "type": "text",
-          "value": "The analytical winner is the 2012 Miami Heat. They crushed the competition despite missing their third musketeer, Chris Bosh, for two of the four rounds."
+          "value": "The analytical winner is the 2006 Miami Heat. The Heat played a couple games in the first round without Alonzo Mourning. Also, they technically missed two games from below threshold, but still important players in James Posey and Udonis Haslem."
+        },
+        {
+          "type": "img",
+          "value": {
+            "src": "assets/teams-big/nyk.png",
+            "alt": "Knicks logo",
+            "class": "logo-big"
+          }
         },
         {
           "type": "text",
@@ -201,15 +223,7 @@
         },
         {
           "type": "text",
-          "value": "But for me, the purest of the ethical champions has to be one of the teams that faced unblemished rosters, leaving no doubt that they outperformed full-strength competition. Between the 2004 Detroit Pistons and the 2006 Miami Heat, I give a slight nod towards the Heat for two reasons."
-        },
-        {
-          "type": "text",
-          "value": "On the opponent side, The Pistons technically didn’t have to face Karl Malone for one game. His DPM was below the threshold and I doubt he would have changed the result, but still worthy of a mention."
-        },
-        {
-          "type": "text",
-          "value": "For the champs, The Pistons were always at full strength, while the Heat played a couple games in the first round without Alonzo Mourning. Also, they technically missed two games from below threshold, but still important players in James Posey and Udonis Haslem."
+          "value": "But for me, the purest of the ethical champions has to be one of the teams that faced unblemished rosters, leaving no doubt that they outperformed full-strength competition."
         },
         {
           "type": "text",

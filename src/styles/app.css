@@ -103,6 +103,9 @@ svg text {
 	font-family: var(--font-mono);
 }
 
+img.logo-big {
+	width: 192px;
+}
 
 @media (min-width: 600px) {
 	p {

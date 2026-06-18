@@ -50,5 +50,7 @@
 	.label {
 		text-align: center;
 		margin: 0;
+		font-family: var(--font-mono);
+		font-size: var(--12px);
 	}
 </style>
