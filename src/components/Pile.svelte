@@ -8,6 +8,7 @@
 	let container;
 	let containerWidth = $state(0);
 	let containerHeight = $state(0);
+	let isVisible = $state(false);
 
 	const MIN_SCALE = 0.02;
 	const MAX_SCALE = 0.1;
@@ -56,6 +57,20 @@
 		};
 	});
 
+	$effect(() => {
+		const io = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					isVisible = true;
+					io.disconnect();
+				}
+			},
+			{ threshold: 0.1 }
+		);
+		io.observe(container);
+		return () => io.disconnect();
+	});
+
 	function angledWall(Bodies, p1, p2, color = "#fff", thickness = 2) {
 		const cx = (p1.x + p2.x) / 2;
 		const cy = (p1.y + p2.y) / 2;
@@ -97,7 +112,8 @@
 		const currentData = data;
 		const width = containerWidth;
 		const height = containerHeight;
-		if (!width || !height || currentData.length === 0) return;
+		const visible = isVisible;
+		if (!width || !height || currentData.length === 0 || !visible) return;
 
 		const { Engine, Render, Runner, Bodies, Body, Composite, Common } = Matter;
 
