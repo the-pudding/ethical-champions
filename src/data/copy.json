@@ -73,7 +73,8 @@
           "type": "Img",
           "value": {
             "src": "assets/compare.png",
-            "alt": "Two cartoon-style basketball player illustrations with oversized photographic heads on small drawn bodies. Malone is icing his knee on a bench, Durant is in a superman pose with a cape."
+            "alt": "Two cartoon-style basketball player illustrations with oversized photographic heads on small drawn bodies. Malone is icing his knee on a bench, Durant is in a superman pose with a cape.",
+            "className": "small"
           }
         },
         {
@@ -123,6 +124,7 @@
           "type": "Img",
           "value": {
             "src": "assets/haliburton.png",
+            "className": "small",
             "figcaption": "I had the same look on my face when I <a href=https://pudding.cool/2025/10/walk/ target=_blank rel=noreferrer>ruptured my Achilles</a> a few months before it was trendy in the playoffs.",
             "alt": "A cartoon-style illustration of Tyrese Haliburton with an oversized photographic head on a small drawn body diving for a ball with a look of pain on his face."
           }

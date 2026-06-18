@@ -1,11 +1,13 @@
 <script>
 	import Matter from "matter-js";
-	import { scaleSqrt, max, ascending } from "d3";
+	import rough from "roughjs";
+	import { scaleSqrt, max, ascending, sum } from "d3";
 	import debounce from "lodash.debounce";
 	import chartData from "$runes/chartData.svelte.js";
 
 	let { season } = $props();
 	let container;
+	let svgEl;
 	let containerWidth = $state(0);
 	let containerHeight = $state(0);
 	let isVisible = $state(false);
@@ -32,6 +34,13 @@
 		}
 		return [];
 	});
+
+	const seasonInfo = $derived.by(() => {
+		if (!chartData.seasons) return null;
+		return chartData.seasons.find((s) => s.season === +season) ?? null;
+	});
+
+	const missedCount = $derived(data.length);
 
 	const maxSeasonDpm = $derived.by(() => {
 		if (!chartData.players) return 1;
@@ -69,6 +78,26 @@
 		);
 		io.observe(container);
 		return () => io.disconnect();
+	});
+
+	$effect(() => {
+		const width = containerWidth;
+		if (!width || !svgEl) return;
+
+		const height = 16;
+		svgEl.setAttribute("width", width);
+		svgEl.setAttribute("height", height);
+		while (svgEl.firstChild) svgEl.firstChild.remove();
+
+		const rc = rough.svg(svgEl);
+		const node = rc.line(0, height / 2, width, height / 2, {
+			stroke: "var(--color-fg)",
+			strokeWidth: 2,
+			roughness: 1.5,
+			seed: 7,
+			disableMultiStroke: true
+		});
+		svgEl.appendChild(node);
 	});
 
 	function angledWall(Bodies, p1, p2, color = "#fff", thickness = 2) {
@@ -242,12 +271,34 @@
 	// $inspect(data);
 </script>
 
-<div class="c" bind:this={container}></div>
+<div class="pile-wrap">
+	<div class="c" bind:this={container}></div>
+	<svg bind:this={svgEl} class="divider" aria-hidden="true"></svg>
+	{#if seasonInfo}
+		<div class="meta">
+			<div class="meta-left">
+				<div class="meta-title">{season} | {seasonInfo.winner}</div>
+				<div class="meta-sub">{missedCount} missed games by opponents</div>
+			</div>
+			<img
+				class="team-logo"
+				src="assets/teams/{seasonInfo.winner.toLowerCase()}.png"
+				alt={seasonInfo.winner}
+			/>
+		</div>
+	{/if}
+</div>
 
 <style>
+	.pile-wrap {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
 	.c {
 		width: 100%;
-		height: 100%;
+		aspect-ratio: 1.5 / 1;
 		position: relative;
 		overflow: hidden;
 		margin: 0;
@@ -265,5 +316,42 @@
 
 	.c :global(canvas) {
 		display: block;
+	}
+
+	.divider {
+		display: block;
+		width: 100%;
+		flex-shrink: 0;
+	}
+
+	.meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+	}
+
+	.meta-left {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+	}
+
+	.meta-title {
+		font-family: var(--font-mono);
+		font-size: var(--14px);
+		line-height: 1.2;
+	}
+
+	.meta-sub {
+		font-family: var(--font-mono);
+		font-size: var(--12px);
+		color: var(--color-fg-light);
+	}
+
+	.team-logo {
+		height: 3rem;
+		width: auto;
+		flex-shrink: 0;
 	}
 </style>

@@ -13,14 +13,8 @@
 <div class="c">
 	{#if chartData.seasons}
 		{#each seasons as season}
-			{@const winner = chartData.seasons.find(
-				(s) => s.season === +season
-			)?.winner}
 			<div class="season">
-				<div class="pile">
-					<Pile {season} />
-				</div>
-				<div class="label">{season} ({winner})</div>
+				<Pile {season} />
 			</div>
 		{/each}
 	{/if}
@@ -41,16 +35,4 @@
 		margin: 0;
 	}
 
-	.pile {
-		aspect-ratio: 1.5 / 1;
-		margin: 0;
-		position: relative;
-	}
-
-	.label {
-		text-align: center;
-		margin: 0;
-		font-family: var(--font-mono);
-		font-size: var(--12px);
-	}
 </style>
