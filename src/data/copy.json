@@ -103,7 +103,7 @@
         },
         {
           "type": "text",
-          "value": "I’ve chosen to limit to players of at least +1 DPM, which on average are the top ~80 players each year. Key starter-level players. Here is the average DPM missed per-game each year."
+          "value": "I’ve chosen to limit to players of at least +1 DPM, which on average are the top ~80 players each year. Key starter-level players. Here is the average DPM missed per game each playoff year."
         },
         {
           "type": "Bar",
@@ -114,7 +114,7 @@
         },
         {
           "type": "text",
-          "value": "We need one more ingredient to make things feel right–the Haliburton effect if you will."
+          "value": "We need one more ingredient to make things feel right: the Haliburton effect, if you will."
         },
         {
           "type": "Img",
