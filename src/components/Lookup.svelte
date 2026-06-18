@@ -56,7 +56,9 @@
 		{ label: "team", prop: "team" },
 		{ label: "relationship", prop: "relation" },
 		{ label: "DPM", prop: "dpm", number: true },
-		{ label: "reason", prop: "reason" }
+		{ label: "reason", prop: "reason" },
+		{ label: "round", prop: "round", number: true, hideMobile: true },
+		{ label: "game", prop: "game", number: true, hideMobile: true }
 	];
 </script>
 
@@ -71,7 +73,11 @@
 			<thead>
 				<tr>
 					{#each columns as col}
-						<th class:number={col.number} class:active={sortProp === col.prop}>
+						<th
+							class:number={col.number}
+							class:active={sortProp === col.prop}
+							class:hide-mobile={col.hideMobile}
+						>
 							<button onclick={() => sort(col.prop)}>
 								{col.label}
 								<span class="arrow">
@@ -94,6 +100,8 @@
 						<td>{row.relation}</td>
 						<td class="number">+{row.dpm.toFixed(1)}</td>
 						<td>{row.reason}</td>
+						<td class="number hide-mobile">{row.round}</td>
+						<td class="number hide-mobile">{row.game}</td>
 					</tr>
 				{/each}
 			</tbody>
@@ -107,6 +115,7 @@
 	.lookup {
 		width: 100%;
 		font-family: var(--font-mono);
+		max-width: 720px;
 	}
 
 	.controls {
@@ -116,10 +125,10 @@
 		margin-bottom: 1rem;
 	}
 
-	.label {
+	/* .label {
 		font-weight: bold;
 		font-size: var(--12px);
-	}
+	} */
 
 	table {
 		width: 100%;
@@ -198,6 +207,19 @@
 	th:nth-of-type(4),
 	td:nth-of-type(4) {
 		width: 3.5rem;
+	}
+
+	th:nth-of-type(6),
+	td:nth-of-type(6),
+	th:nth-of-type(7),
+	td:nth-of-type(7) {
+		width: 3rem;
+	}
+
+	@media (max-width: 600px) {
+		.hide-mobile {
+			display: none;
+		}
 	}
 
 	.empty {
