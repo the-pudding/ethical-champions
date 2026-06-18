@@ -129,10 +129,16 @@
           "value": "According to the data he played in game seven, so he doesn’t count as a DNP. But he got injured just seven minutes into the first quarter, and the void he left for the rest of the game was undeniable. So we’ll award some partial missing DPM values for these unusual circumstances*."
         },
         {
-          "type": "Placeholder",
+          "type": "StackedBar",
           "value": {
-            "value": "missing DPM by year with partial stacked on top"
+            "metric1": "fieldLowMinutesDPMGte1PerGame",
+            "metric2": "fieldDpmGte1PerGame",
+            "title": "missing DPM per game each playoff year including low-minute games"
           }
+        },
+        {
+          "type": "text",
+          "value": "Okay, it didn’t add a ton, but I can sleep at night knowing unusually low-minute situations are accounted for."
         },
         {
           "type": "text",

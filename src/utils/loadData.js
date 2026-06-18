@@ -46,7 +46,8 @@ export default async function loadData() {
 					d.winnerLowMinutesDPMGte1 -
 					(d.oppDpmGte1 + d.oppLowMinutesDPMGte1)) /
 				d.winnerGameCount,
-			fieldDpmGte1PerGame: d.fieldDpmGte1 / d.gameCount
+			fieldDpmGte1PerGame: d.fieldDpmGte1 / d.gameCount,
+			fieldLowMinutesDPMGte1PerGame: d.fieldLowMinutesDPMGte1 / d.gameCount
 		}));
 
 	const topPlayers = topPlayersRaw.map((d) => ({

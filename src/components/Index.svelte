@@ -7,6 +7,7 @@
 	import Video from "$components/Video.svelte";
 	import Swarm from "$components/Swarm.svelte";
 	import Bar from "$components/Bar.svelte";
+	import StackedBar from "$components/StackedBar.svelte";
 	import Table from "$components/Table.svelte";
 	import Placeholder from "$components/Placeholder.svelte";
 	import PileExample from "$components/Pile.Example.svelte";
@@ -24,6 +25,7 @@
 		Video,
 		Swarm,
 		Bar,
+		StackedBar,
 		Table,
 		Placeholder,
 		PileExample,
