@@ -277,7 +277,7 @@
 			const found = Query.point(physBodies, { x: mx, y: my });
 			if (found.length > 0) {
 				const player = bodyMap.get(found[0].id);
-				tooltip = { visible: true, x: mx, y: my, name: player?.name ?? "", team: player?.team ?? "", dpm: player?.dpm ?? 0 };
+				tooltip = { visible: true, x: mx, y: my, name: player?.name ?? "", team: player?.team ?? "", dpm: player?.missingDpm ?? 0 };
 			} else {
 				tooltip = { ...tooltip, visible: false };
 			}
