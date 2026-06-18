@@ -115,7 +115,7 @@
 	.lookup {
 		width: 100%;
 		font-family: var(--font-mono);
-		max-width: 720px;
+		max-width: 800px;
 	}
 
 	.controls {
