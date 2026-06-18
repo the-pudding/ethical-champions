@@ -14,10 +14,12 @@
 	import useWindowDimensions from "$runes/useWindowDimensions.svelte.js";
 	import chartData from "$runes/chartData.svelte.js";
 
-	const vert = $derived(dimensions.width > 0 && dimensions.width < 600);
-
+	let { metric, title } = $props();
 	let container;
 	let svg;
+
+	const vert = $derived(dimensions.width > 0 && dimensions.width < 600);
+
 	const dimensions = new useWindowDimensions();
 
 	const IMG_HEIGHTS = {
@@ -35,8 +37,6 @@
 		tor: 74,
 		nyk: 68
 	};
-
-	const metric = "net";
 
 	const rows = $derived((chartData.seasons ?? []).filter((d) => d.winner));
 
@@ -126,7 +126,7 @@
 				.attr("x", 0)
 				.attr("y", innerH / 2)
 				.attr("dominant-baseline", "middle")
-				.text("net missing DPM per game");
+				.text(title);
 			labelG
 				.append("text")
 				.attr("class", "lbl-edge")
@@ -149,7 +149,7 @@
 				.attr("text-anchor", "middle")
 				.attr("x", innerW / 2)
 				.attr("y", 0)
-				.text("net missing DPM per game");
+				.text(title);
 			labelG
 				.append("text")
 				.attr("class", "lbl-edge")

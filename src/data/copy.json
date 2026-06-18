@@ -17,7 +17,10 @@
         },
         {
           "type": "Swarm",
-          "value": {}
+          "value": {
+            "metric": "net",
+            "title": "net missing DPM per game"
+          }
         },
         {
           "type": "text",
@@ -170,9 +173,10 @@
           "value": "If we reduce these piles into a single score, we can plot them cleanly and compare them."
         },
         {
-          "type": "Placeholder",
+          "type": "Swarm",
           "value": {
-            "value": "classic swarm with faint ghost heads around teams"
+            "metric": "opp",
+            "title": "opponent missing DPM per game"
           }
         },
         {
@@ -200,9 +204,10 @@
           "value": "But the Thunder had their own setbacks, missing Kenrich Williams for nearly the whole run, Aaron Wiggins for a game, and Isaiah Joe for some pivotal Finals games. While not superstar level players, they were still important pieces. Subtract what they were missing from what their opponents were missing, and it yields an, analytically speaking, ethical championship."
         },
         {
-          "type": "Placeholder",
+          "type": "img",
           "value": {
-            "value": "chart of tug of war, maybe animated"
+            "src": "assets/tug.png",
+            "alt": "A cartoon-style illustration of two groups of players with oversized photographic heads (multiple heads, one body) on a small drawn body. They are playing tug of war with the Thunder logo in between them."
           }
         },
         {
@@ -211,7 +216,10 @@
         },
         {
           "type": "Swarm",
-          "value": {}
+          "value": {
+            "title": "net missing DPM per game",
+            "metric": "net"
+          }
         },
         {
           "type": "text",
