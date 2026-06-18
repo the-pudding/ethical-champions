@@ -9,7 +9,7 @@
       "content": [
         {
           "type": "text",
-          "value": "I hereby proclaim there have only been six truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
+          "value": "I believe there have only been six truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
         },
         {
           "type": "text",
@@ -28,8 +28,10 @@
           "value": "But some champs faced a harder road."
         },
         {
-          "type": "text",
-          "value": "Ethical NBA Championships, Ranked (big title)"
+          "type": "Hero",
+          "value": {
+            "title": "Ethical NBA Championships, Ranked"
+          }
         },
         {
           "type": "text",
@@ -104,7 +106,7 @@
           "type": "Img",
           "value": {
             "src": "assets/haliburton.png",
-            "figcaption": "The same look on my face when I <a href=https://pudding.cool/2025/10/walk/ target=_blank rel=noreferrer>ruptured my achilles</a> a few months earlier.",
+            "figcaption": "My face too when I <a href=https://pudding.cool/2025/10/walk/ target=_blank rel=noreferrer>ruptured my achilles</a> a few months earlier.",
             "alt": "A cartoon-style illustration of Tyrese Haliburton with an oversized photographic head on small drawn body diving for a ball with a look of pain on his face."
           }
         },

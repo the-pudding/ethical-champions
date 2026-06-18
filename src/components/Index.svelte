@@ -2,6 +2,7 @@
 	import { getContext } from "svelte";
 	import CMS from "$components/helpers/CMS.svelte";
 	import Footer from "$components/Footer.svelte";
+	import Hero from "$components/Hero.svelte";
 	import Img from "$components/Img.svelte";
 	import Video from "$components/Video.svelte";
 	import Swarm from "$components/Swarm.svelte";
@@ -18,6 +19,7 @@
 	const { body } = copy;
 
 	const components = {
+		Hero,
 		Img,
 		Video,
 		Swarm,
@@ -41,7 +43,6 @@
 
 <style>
 	article > :global(section > p),
-	article > :global(section > h1),
 	article > :global(section > video),
 	article > :global(section > img),
 	article > :global(section > div),

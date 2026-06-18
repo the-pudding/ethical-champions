@@ -22,8 +22,9 @@
 			const node = rc.rectangle(pad, pad, width + pad, height, {
 				stroke: "var(--color-fg)",
 				strokeWidth: 6,
-				roughness: 2
-				// disableMultiStroke: false
+				roughness: 2,
+				seed: 13,
+				disableMultiStroke: true
 			});
 			svgEl.appendChild(node);
 		});
