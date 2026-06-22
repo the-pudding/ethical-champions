@@ -67,6 +67,6 @@
 		font-family: var(--font-mono);
 		font-size: var(--12px);
 		color: var(--color-fg-light);
-		margin-top: 1rem;
+		margin-top: 0.5rem;
 	}
 </style>

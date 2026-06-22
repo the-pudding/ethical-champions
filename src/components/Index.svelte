@@ -56,9 +56,16 @@
 	article > :global(section > h2) {
 		max-width: var(--col-width);
 		margin: 2rem auto;
+		padding: 0 1rem;
 	}
 
 	article > :global(section > p:first-of-type) {
-		font-size: var(--32px);
+		font-size: var(--28px);
+	}
+
+	@media (min-width: 600px) {
+		article > :global(section > p:first-of-type) {
+			font-size: var(--32px);
+		}
 	}
 </style>

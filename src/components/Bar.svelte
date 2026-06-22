@@ -22,9 +22,8 @@
 	const rows = $derived((chartData.seasons ?? []).filter((d) => d.winner));
 
 	$effect(() => {
-		const w = dimensions.width,
-			h = dimensions.height;
-		if (!w || !h || rows.length === 0) return;
+		const w = dimensions.width;
+		if (!w || rows.length === 0) return;
 		const cw = container.clientWidth;
 		const ch = container.clientHeight;
 		if (!cw || !ch) return;
@@ -60,7 +59,7 @@
 			const yScale = scaleBand()
 				.domain(seasons)
 				.range([0, innerH])
-				.padding(0.35);
+				.padding(0.25);
 
 			g.append("g")
 				.attr("class", "grid")
@@ -168,12 +167,12 @@
 </script>
 
 <figure class="c">
+	{#if title}
+		<figcaption>{@html title}</figcaption>
+	{/if}
 	<div class="chart" bind:this={container}>
 		<svg bind:this={svg}></svg>
 	</div>
-	{#if title}
-		<figcaption>{title}</figcaption>
-	{/if}
 </figure>
 
 <style>
@@ -181,6 +180,8 @@
 		width: 100%;
 		max-width: 1280px;
 		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
 	}
 
 	figcaption {
@@ -188,7 +189,11 @@
 		color: var(--color-fg-light);
 		font-family: var(--font-mono);
 		text-align: center;
-		margin-top: 0.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	figcaption :global(span) {
+		color: var(--color-black);
 	}
 
 	.chart {
@@ -221,8 +226,17 @@
 	}
 
 	@media (min-width: 720px) {
+		.c {
+			flex-direction: column-reverse;
+		}
+
 		.chart {
 			aspect-ratio: 2.5 / 1;
+		}
+
+		figcaption {
+			margin-top: 0.5rem;
+			margin-bottom: 0;
 		}
 	}
 </style>

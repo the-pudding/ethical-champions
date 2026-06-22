@@ -1,7 +1,9 @@
 {
   "meta": {
     "title": "Ethical NBA Championships, Ranked",
-    "description": "Which teams had the easiest and hardest paths?"
+    "description": "Which teams don’t need asterisks by their title?",
+    "url": "https://pudding.cool/2026/07/ethical-champions",
+    "keywords": "NBA, asterisk, title, champion"
   },
   "body": [
     {
@@ -138,7 +140,7 @@
           "value": {
             "metric1": "fieldLowMinutesDPMGte1PerGame",
             "metric2": "fieldDpmGte1PerGame",
-            "title": "missing DPM per game each playoff year including low-minute games"
+            "title": "missing DPM per game each playoff year including <span>low-minute games</span>"
           }
         },
         {

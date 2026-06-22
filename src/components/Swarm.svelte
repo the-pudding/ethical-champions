@@ -51,7 +51,7 @@
 		const padTop = 32;
 		const padRight = 32;
 		const padBottom = vert ? 32 : 80;
-		const padLeft = vert ? 80 : 32;
+		const padLeft = vert ? 48 : 32;
 		const innerW = cw - padLeft - padRight;
 		const innerH = ch - padTop - padBottom;
 		const r = Math.sqrt(Math.sqrt(cw * ch * 2));
@@ -114,24 +114,23 @@
 			labelG
 				.append("text")
 				.attr("class", "lbl-edge")
-				.attr("text-anchor", "middle")
-				.attr("x", 0)
+				.attr("text-anchor", "start")
+				.attr("x", 16)
 				.attr("y", 0)
 				.attr("dominant-baseline", "hanging")
-				.text("harder road ↑");
+				.text("↑ harder road");
 			labelG
 				.append("text")
 				.attr("class", "lbl-mid")
 				.attr("text-anchor", "middle")
-				.attr("x", 0)
-				.attr("y", innerH / 2)
 				.attr("dominant-baseline", "middle")
+				.attr("transform", `translate(12, ${innerH / 3.75}) rotate(-90)`)
 				.text(title);
 			labelG
 				.append("text")
 				.attr("class", "lbl-edge")
-				.attr("text-anchor", "middle")
-				.attr("x", 0)
+				.attr("text-anchor", "start")
+				.attr("x", 16)
 				.attr("y", innerH)
 				.text("↓ easier road");
 		} else {
@@ -236,6 +235,7 @@
 
 	svg {
 		display: block;
+		height: 100%;
 	}
 
 	svg :global(text.lbl-season) {

@@ -332,9 +332,11 @@
 		<div class="meta">
 			<div class="meta-left">
 				<div class="meta-title">{season} | {seasonInfo.winner}</div>
-				<div class="meta-sub">{missedCount} missed games by opponents</div>
-				<div class="meta-sub">
-					{avgMissingDpm.toFixed(1)} missing DPM per game
+				<div class="meta-sub sub-count">
+					{missedCount} missed games by opp.
+				</div>
+				<div class="meta-sub sub-dpm">
+					{avgMissingDpm.toFixed(1)} missed DPM per game
 				</div>
 			</div>
 			<img
@@ -427,7 +429,7 @@
 
 	.meta-sub {
 		font-family: var(--font-mono);
-		font-size: var(--12px);
+		font-size: var(--11px);
 		color: var(--color-fg-light);
 		line-height: 1.2;
 	}
@@ -436,5 +438,24 @@
 		height: 3.5rem;
 		width: auto;
 		flex-shrink: 0;
+		display: none;
+	}
+
+	.sub-dpm {
+		display: none;
+	}
+
+	@media (min-width: 600px) {
+		.meta-sub {
+			font-size: var(--12px);
+		}
+
+		.team-logo {
+			display: block;
+		}
+
+		.sub-dpm {
+			display: block;
+		}
 	}
 </style>

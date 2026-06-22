@@ -26,13 +26,28 @@
 		max-width: 1280px;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem;
+		gap: 0.5rem;
 	}
 
 	.season {
 		position: relative;
-		width: calc(25% - 1rem);
+		width: calc(50% - 0.5rem);
 		margin: 0;
 	}
 
+	@media (min-width: 600px) {
+		.c {
+			gap: 1rem;
+		}
+
+		.season {
+			width: calc(33.333% - 1rem);
+		}
+	}
+
+	@media (min-width: 800px) {
+		.season {
+			width: calc(25% - 1rem);
+		}
+	}
 </style>

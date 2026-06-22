@@ -14,7 +14,7 @@
 		"https://pudding.cool/assets/fonts/atlas/AtlasTypewriter-Medium-Web.woff2"
 	];
 
-	const { title, description, url, keywords } = copy;
+	const { title, description, url, keywords } = copy.meta;
 	setContext("copy", copy);
 	setContext("data", data);
 </script>
