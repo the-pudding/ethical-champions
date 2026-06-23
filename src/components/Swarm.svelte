@@ -13,8 +13,12 @@
 	} from "d3";
 	import useWindowDimensions from "$runes/useWindowDimensions.svelte.js";
 	import chartData from "$runes/chartData.svelte.js";
+	import ToggleGroup from "$components/ui/ToggleGroup.svelte";
 
-	let { metric, title } = $props();
+	let { metric, title, toggle = false } = $props();
+
+	let localMetric = $state("net");
+	const activeMetric = $derived(toggle ? localMetric : metric);
 	let container;
 	let svg;
 
@@ -50,7 +54,7 @@
 
 		const padTop = 32;
 		const padRight = 32;
-		const padBottom = vert ? 32 : 80;
+		const padBottom = vert ? 32 : 32;
 		const padLeft = vert ? 48 : 32;
 		const innerW = cw - padLeft - padRight;
 		const innerH = ch - padTop - padBottom;
@@ -68,7 +72,7 @@
 			.attr("transform", `translate(${padLeft},${padTop})`);
 
 		const scale = scaleLinear();
-		const vals = rows.map((d) => d[metric]);
+		const vals = rows.map((d) => d[activeMetric]);
 		const [minVal, maxVal] = extent(vals);
 		const domainPad = (r / (vert ? innerH : innerW)) * (maxVal - minVal);
 		scale.domain([minVal - domainPad, maxVal + domainPad]);
@@ -118,7 +122,7 @@
 				.attr("x", 16)
 				.attr("y", 0)
 				.attr("dominant-baseline", "hanging")
-				.text("↑ harder road");
+				.text("↑ more ethical");
 			labelG
 				.append("text")
 				.attr("class", "lbl-mid")
@@ -132,16 +136,16 @@
 				.attr("text-anchor", "start")
 				.attr("x", 16)
 				.attr("y", innerH)
-				.text("↓ easier road");
+				.text("↓ less ethical");
 		} else {
-			labelG.attr("transform", `translate(${padLeft},${padTop + innerH + 44})`);
+			labelG.attr("transform", `translate(${padLeft},${padTop})`);
 			labelG
 				.append("text")
 				.attr("class", "lbl-edge")
 				.attr("text-anchor", "start")
 				.attr("x", 0)
 				.attr("y", 0)
-				.text("← easier road");
+				.text("← less ethical");
 			labelG
 				.append("text")
 				.attr("class", "lbl-mid")
@@ -155,14 +159,14 @@
 				.attr("text-anchor", "end")
 				.attr("x", innerW)
 				.attr("y", 0)
-				.text("harder road →");
+				.text("more ethical →");
 		}
 
 		// force simulation
 		const sim = forceSimulation(rows.map((d) => ({ ...d })))
 			.force(
 				vert ? "y" : "x",
-				(vert ? forceY : forceX)((d) => scale(d[metric])).strength(1)
+				(vert ? forceY : forceX)((d) => scale(d[activeMetric])).strength(1)
 			)
 			.force(
 				vert ? "x" : "y",
@@ -224,6 +228,18 @@
 <div class="c" bind:this={container}>
 	<svg bind:this={svg}></svg>
 </div>
+{#if toggle}
+	<div class="toggle-wrap">
+		<ToggleGroup
+			items={[
+				{ value: "net", label: "net" },
+				{ value: "opp", label: "opp" }
+			]}
+			bind:value={localMetric}
+			required
+		/>
+	</div>
+{/if}
 
 <style>
 	.c {
@@ -274,6 +290,12 @@
 	svg :global(.lbl-mid) {
 		fill: var(--color-fg-light);
 		font-size: var(--12px);
+	}
+
+	.toggle-wrap {
+		display: flex;
+		justify-content: center;
+		margin-top: 0.5rem;
 	}
 
 	@media (min-width: 720px) {

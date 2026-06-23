@@ -5,7 +5,7 @@
 	import debounce from "lodash.debounce";
 	import chartData from "$runes/chartData.svelte.js";
 
-	let { season } = $props();
+	let { season, winner = false } = $props();
 	let container;
 	let svgEl;
 	let containerWidth = $state(0);
@@ -17,7 +17,9 @@
 		y: 0,
 		name: "",
 		team: "",
-		dpm: 0
+		dpm: 0,
+		round: null,
+		game: null
 	});
 
 	const MIN_SCALE = 0.02;
@@ -26,7 +28,11 @@
 	const data = $derived.by(() => {
 		if (chartData.heads && chartData.players && chartData.dnp) {
 			return chartData.dnp
-				.filter((d) => d.season === +season && d.relation === "opponent")
+				.filter(
+					(d) =>
+						d.season === +season &&
+						d.relation === (winner ? "winner" : "opponent")
+				)
 				.map((d) => {
 					const player = chartData.players.find((p) => p.bbrID === d.bbrID);
 					return {
@@ -106,7 +112,7 @@
 		const node = rc.line(0, height / 2, width, height / 2, {
 			stroke: "var(--color-fg)",
 			strokeWidth: 2,
-			roughness: 1.5,
+			roughness: 1.25,
 			disableMultiStroke: true
 		});
 		svgEl.appendChild(node);
@@ -290,7 +296,9 @@
 					y: my,
 					name: player?.name ?? "",
 					team: player?.team ?? "",
-					dpm: player?.missingDpm ?? 0
+					dpm: player?.missingDpm ?? 0,
+					round: player?.round ?? null,
+					game: player?.game ?? null
 				};
 			} else {
 				tooltip = { ...tooltip, visible: false };
@@ -323,7 +331,10 @@
 		<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px">
 			<div class="tooltip-name">{tooltip.name}</div>
 			<div class="tooltip-sub">
-				{tooltip.team} · {tooltip.dpm.toFixed(1)} missing DPM
+				{tooltip.team} (round {tooltip.round}, game {tooltip.game})
+			</div>
+			<div class="tooltip-sub">
+				{tooltip.dpm.toFixed(1)} missing DPM
 			</div>
 		</div>
 	{/if}
@@ -331,12 +342,14 @@
 	{#if seasonInfo}
 		<div class="meta">
 			<div class="meta-left">
-				<div class="meta-title">{season} | {seasonInfo.winner}</div>
+				<div class="meta-title">
+					{season} | {seasonInfo.winner} ({winner ? "winner" : "opps."})
+				</div>
 				<div class="meta-sub sub-count">
-					{missedCount} missed games by opp.
+					{missedCount} missed games
 				</div>
 				<div class="meta-sub sub-dpm">
-					{avgMissingDpm.toFixed(1)} missed DPM per game
+					{avgMissingDpm.toFixed(1)} missed DPM / game
 				</div>
 			</div>
 			<img
@@ -358,10 +371,11 @@
 
 	.c {
 		width: 100%;
-		aspect-ratio: 1.5 / 1;
+		aspect-ratio: 1.4 / 1;
 		position: relative;
 		overflow: hidden;
 		margin: 0;
+		cursor: pointer;
 	}
 
 	.tooltip {
@@ -372,7 +386,7 @@
 		color: var(--color-bg, #fff);
 		font-family: var(--font-mono);
 		font-size: var(--12px);
-		padding: 0.2em 0.5em;
+		padding: 0.25em 0.5em;
 		white-space: nowrap;
 		transform: translate(-50%, calc(-100% - 8px));
 	}
@@ -406,6 +420,7 @@
 		display: block;
 		width: 100%;
 		flex-shrink: 0;
+		margin-top: -0.25rem;
 	}
 
 	.meta {

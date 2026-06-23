@@ -1,11 +1,11 @@
 <script>
 	import Pile from "$components/Pile.svelte";
 
-	let { season } = $props();
+	let { season, winner = false } = $props();
 </script>
 
 <div class="c">
-	<Pile {season} />
+	<Pile {season} {winner} />
 </div>
 
 <style>

@@ -2,11 +2,12 @@
 	import chartData from "$runes/chartData.svelte.js";
 	import Select from "$components/ui/Select.svelte";
 
+	let { season = undefined } = $props();
 	const seasons = $derived(chartData.seasons ?? []);
 	const dnp = $derived(chartData.dnp ?? []);
 	const players = $derived(chartData.players ?? []);
 
-	let selectedSeason = $state(null);
+	let selectedSeason = $state(season ? +season : null);
 	let sortProp = $state("dpm");
 	let sortDir = $state("desc");
 
@@ -51,6 +52,8 @@
 		}
 	}
 
+	const seasonInfo = $derived(seasons.find((s) => s.season === selectedSeason));
+
 	const columns = [
 		{ label: "name", prop: "name" },
 		{ label: "team", prop: "team" },
@@ -63,12 +66,31 @@
 </script>
 
 <div class="lookup">
-	<div class="controls">
-		<!-- <span class="label">Championship season</span> -->
-		<Select items={seasonOptions} bind:value={selectedSeason} />
-	</div>
+	{#if season === undefined}
+		<div class="controls">
+			<Select items={seasonOptions} bind:value={selectedSeason} />
+		</div>
+	{/if}
 
 	{#if rows.length}
+		<div class="label">missing DPM per game</div>
+		<div class="net">
+			<!-- label -->
+			<div class="net-item">
+				<span class="net-label">winner</span>
+				<span class="net-value">+{seasonInfo.win.toFixed(2)}</span>
+			</div>
+			<div class="net-item">
+				<span class="net-label">opponents</span>
+				<span class="net-value">{seasonInfo.opp.toFixed(2)}</span>
+			</div>
+			<div class="net-item">
+				<span class="net-label">net</span>
+				<span class="net-value"
+					>{seasonInfo.net > 0 ? "+" : ""}{seasonInfo.net.toFixed(2)}</span
+				>
+			</div>
+		</div>
 		<table>
 			<thead>
 				<tr>
@@ -121,14 +143,37 @@
 	.controls {
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		gap: 0.75rem;
 		margin-bottom: 1rem;
 	}
 
-	/* .label {
-		font-weight: bold;
+	.label {
 		font-size: var(--12px);
-	} */
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	.net {
+		display: flex;
+		gap: 1px;
+		margin-bottom: 0.5rem;
+		font-size: var(--12px);
+	}
+
+	.net-item {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.125rem;
+		background: var(--color-gray-200);
+		padding: 0.5rem;
+	}
+
+	.net-value {
+		font-weight: bold;
+	}
 
 	table {
 		width: 100%;

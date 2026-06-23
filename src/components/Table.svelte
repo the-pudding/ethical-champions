@@ -1,11 +1,13 @@
 <script>
 	import chartData from "$runes/chartData.svelte.js";
 
+	let { title } = $props();
 	const players = $derived(chartData.topPlayers ?? []);
 </script>
 
 <div class="c">
 	<table>
+		<caption>{title}</caption>
 		<thead>
 			<tr>
 				<th class="rank">#</th>
@@ -38,6 +40,13 @@
 		border-collapse: collapse;
 		width: 100%;
 		font-family: var(--font-mono);
+	}
+
+	caption {
+		text-align: center;
+		font-size: var(--12px);
+		padding-bottom: 0.5rem;
+		color: var(--color-fg-light);
 	}
 
 	thead tr {

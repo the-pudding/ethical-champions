@@ -11,7 +11,7 @@
       "content": [
         {
           "type": "text",
-          "value": "I believe there have only been six truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
+          "value": "I believe there have only been five truly ethical NBA champions in the last 25 years: teams that don’t need an asterisk by their title."
         },
         {
           "type": "text",
@@ -21,7 +21,7 @@
           "type": "Swarm",
           "value": {
             "metric": "net",
-            "title": "net missing DPM per game"
+            "title": "Net missing DPM per game"
           }
         },
         {
@@ -58,13 +58,17 @@
         },
         {
           "type": "text",
-          "value": "In those days, players had grit and barely missed games. Lately, though, the playoffs have become a war of attrition. Here is how many games above-average players (defined shortly) missed each playoff year."
+          "value": "Back then, players had grit and barely missed games. Lately, though, the playoffs have become a war of attrition. Availability, as they say, is the best ability. But a title decided by who’s healthy is a title decided in some part by luck."
+        },
+        {
+          "type": "text",
+          "value": "Here is how many games above-average players (defined shortly) missed each playoff year."
         },
         {
           "type": "Bar",
           "value": {
             "metric": "dnpCountDpmGt0",
-            "title": "number of games missed each playoff year"
+            "title": "Number of games missed each playoff year"
           }
         },
         {
@@ -89,7 +93,9 @@
         },
         {
           "type": "Table",
-          "value": {}
+          "value": {
+            "title": "Top 10 DPM of the 2026 regular season"
+          }
         },
         {
           "type": "text",
@@ -115,7 +121,7 @@
           "type": "Bar",
           "value": {
             "metric": "fieldDpmGte1PerGame",
-            "title": "missing DPM per game each playoff year"
+            "title": "Missing DPM per game each playoff year"
           }
         },
         {
@@ -140,7 +146,7 @@
           "value": {
             "metric1": "fieldLowMinutesDPMGte1PerGame",
             "metric2": "fieldDpmGte1PerGame",
-            "title": "missing DPM per game each playoff year including <span>low-minute games</span>"
+            "title": "Missing DPM per game each playoff year including <span>low-minute games</span>"
           }
         },
         {
@@ -180,7 +186,7 @@
           "type": "Swarm",
           "value": {
             "metric": "opp",
-            "title": "opponent missing DPM per game"
+            "title": "Opponent missing DPM per game"
           }
         },
         {
@@ -204,8 +210,25 @@
           "value": "In 2025 the Thunder caught a couple breaks by dodging Ja Morant and Brandon Clarke on the Grizzlies, John Minott on the Timberwolves, and the infamous game 7 from Tyrese Haliburton."
         },
         {
+          "type": "PileExample",
+          "value": {
+            "season": "2025"
+          }
+        },
+        {
           "type": "text",
-          "value": "But the Thunder had their own setbacks, missing Kenrich Williams for nearly the whole run, Aaron Wiggins for a game, and Isaiah Joe for some pivotal Finals games. While not superstar level players, they were still important pieces. Subtract what they were missing from what their opponents were missing, and it yields an, analytically speaking, ethical championship."
+          "value": "But the Thunder had their own setbacks, missing Kenrich Williams for nearly the whole run, Aaron Wiggins for a game, and Isaiah Joe for some pivotal Finals games. While not superstar level players, they were still important pieces."
+        },
+        {
+          "type": "PileExample",
+          "value": {
+            "season": "2025",
+            "winner": "true"
+          }
+        },
+        {
+          "type": "text",
+          "value": "Subtract what they were missing from what their opponents were missing, and it yields the most analytically ethical championship in our data."
         },
         {
           "type": "img",
@@ -221,25 +244,18 @@
         {
           "type": "Swarm",
           "value": {
-            "title": "net missing DPM per game",
-            "metric": "net"
+            "title": "Missing DPM per game",
+            "metric": "net",
+            "toggle": "true"
           }
         },
         {
           "type": "text",
-          "value": "Of the six that are quantitatively ethical, three jump out that are worthy of the ethical crown."
-        },
-        {
-          "type": "img",
-          "value": {
-            "src": "assets/teams-big/sas.png",
-            "alt": "Spurs logo",
-            "class": "logo-big"
-          }
+          "value": "While the 2025 Thunder come out just ahead numerically, the volume of missed games (on both sides) is doing a lot of work. (Insert bad joke about the Thunder taking advantage of the rules). I’ll be the first to admit that no data-driven argument like this is without its imperfections. A clean score doesn’t tell you whether the breaks were decisive. A dominant enough champion wins regardless of who’s missing. This measures the luck, not whether the luck mattered."
         },
         {
           "type": "text",
-          "value": "The 2005 Spurs did avoid a few big names (Rashard Lewis, Ray Allen, Joe Johnson), but their starting center, Rasho Nesterović was basically absent the entire playoffs. Third place."
+          "value": "Of the five that are quantitatively ethical, two others jump out that appear more worthy of the ethical crown."
         },
         {
           "type": "img",
@@ -247,6 +263,12 @@
             "src": "assets/teams-big/nyk.png",
             "alt": "Knicks logo",
             "class": "logo-big"
+          }
+        },
+        {
+          "type": "Lookup",
+          "value": {
+            "season": "2026"
           }
         },
         {
@@ -259,6 +281,12 @@
             "src": "assets/teams-big/mia.png",
             "alt": "Heat logo",
             "class": "logo-big"
+          }
+        },
+        {
+          "type": "Lookup",
+          "value": {
+            "season": "2006"
           }
         },
         {
@@ -283,7 +311,11 @@
         },
         {
           "type": "text",
-          "value": "Data from <a href=https://www.nbarapm.com/ target=blank rel=noreferrer>nbarapm.com</a> and <a href=http://basketball-reference.com/ target=_blank rel=noreferrer>basketball-reference.com.</a>"
+          "value": "Data from <a href=https://www.darko.app/ target=blank rel=noreferrer>darko.app</a> and <a href=http://basketball-reference.com/ target=_blank rel=noreferrer>basketball-reference.com.</a>"
+        },
+        {
+          "type": "text",
+          "value": "Since DPM is updated daily, I used a snapshot of their last regular-season game. This is DARKO’s best guess of how good they were heading into the playoffs."
         },
         {
           "type": "text",
