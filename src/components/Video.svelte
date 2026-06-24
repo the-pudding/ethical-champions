@@ -36,7 +36,7 @@
 
 <figure>
 	<div class="video-wrap">
-		<video bind:this={videoEl} {src} preload autoplay muted loop></video>
+		<video bind:this={videoEl} {src} preload autoplay muted loop playsinline x-webkit-airplay="deny" disablePictureInPicture></video>
 		<svg bind:this={svgEl} class="border-svg" aria-hidden="true"></svg>
 	</div>
 	{#if figcaption}

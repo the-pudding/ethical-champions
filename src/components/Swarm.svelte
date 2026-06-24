@@ -55,7 +55,7 @@
 		const padTop = 32;
 		const padRight = 32;
 		const padBottom = vert ? 32 : 32;
-		const padLeft = vert ? 48 : 32;
+		const padLeft = vert ? 64 : 32;
 		const innerW = cw - padLeft - padRight;
 		const innerH = ch - padTop - padBottom;
 		const r = Math.sqrt(Math.sqrt(cw * ch * 2));
@@ -74,7 +74,7 @@
 		const scale = scaleLinear();
 		const vals = rows.map((d) => d[activeMetric]);
 		const [minVal, maxVal] = extent(vals);
-		const domainPad = (r / (vert ? innerH : innerW)) * (maxVal - minVal);
+		const domainPad = (r / (vert ? innerH : innerW)) * (maxVal - minVal) * 2;
 		scale.domain([minVal - domainPad, maxVal + domainPad]);
 
 		if (vert) {
@@ -120,7 +120,7 @@
 				.attr("class", "lbl-edge")
 				.attr("text-anchor", "start")
 				.attr("x", 16)
-				.attr("y", 0)
+				.attr("y", -20)
 				.attr("dominant-baseline", "hanging")
 				.text("↑ more ethical");
 			labelG
@@ -128,14 +128,14 @@
 				.attr("class", "lbl-mid")
 				.attr("text-anchor", "middle")
 				.attr("dominant-baseline", "middle")
-				.attr("transform", `translate(12, ${innerH / 3.75}) rotate(-90)`)
+				.attr("transform", `translate(-8, ${innerH / 2}) rotate(-90)`)
 				.text(title);
 			labelG
 				.append("text")
 				.attr("class", "lbl-edge")
 				.attr("text-anchor", "start")
 				.attr("x", 16)
-				.attr("y", innerH)
+				.attr("y", innerH + 20)
 				.text("↓ less ethical");
 		} else {
 			labelG.attr("transform", `translate(${padLeft},${padTop})`);
@@ -225,9 +225,6 @@
 	});
 </script>
 
-<div class="c" bind:this={container}>
-	<svg bind:this={svg}></svg>
-</div>
 {#if toggle}
 	<div class="toggle-wrap">
 		<ToggleGroup
@@ -240,6 +237,10 @@
 		/>
 	</div>
 {/if}
+
+<div class="c" bind:this={container}>
+	<svg bind:this={svg}></svg>
+</div>
 
 <style>
 	.c {

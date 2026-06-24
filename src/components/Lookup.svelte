@@ -58,8 +58,8 @@
 		{ label: "name", prop: "name" },
 		{ label: "team", prop: "team" },
 		{ label: "relationship", prop: "relation" },
-		{ label: "DPM", prop: "dpm", number: true },
-		{ label: "reason", prop: "reason" },
+		{ label: "DPM", prop: "dpm", number: true, format: (v) => `+${v.toFixed(1)}` },
+		{ label: "reason", prop: "reason", hideMobile: true },
 		{ label: "round", prop: "round", number: true, hideMobile: true },
 		{ label: "game", prop: "game", number: true, hideMobile: true }
 	];
@@ -117,13 +117,11 @@
 			<tbody>
 				{#each rows as row}
 					<tr>
-						<td>{row.name}</td>
-						<td>{row.team}</td>
-						<td>{row.relation}</td>
-						<td class="number">+{row.dpm.toFixed(1)}</td>
-						<td>{row.reason}</td>
-						<td class="number hide-mobile">{row.round}</td>
-						<td class="number hide-mobile">{row.game}</td>
+						{#each columns as col}
+							<td class:number={col.number} class:hide-mobile={col.hideMobile}>
+								{col.format ? col.format(row[col.prop]) : row[col.prop]}
+							</td>
+						{/each}
 					</tr>
 				{/each}
 			</tbody>

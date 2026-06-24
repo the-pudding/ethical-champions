@@ -76,7 +76,7 @@
 	}
 
 	.rank {
-		width: 3rem;
+		width: 2.25rem;
 		text-align: right;
 		color: var(--color-fg-light);
 	}
